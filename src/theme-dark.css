@@ -1,0 +1,38 @@
+/* theme-dark.css */
+body.qf-dark-theme .qf-command-palette-container {
+  background-color: rgba(157, 156, 156, 0.90);
+}
+
+body.qf-dark-theme .qf-search-wrapper {
+  border-bottom-color: rgba(157, 156, 156, 0.90);;
+}
+
+ody.qf-dark-theme .qf-search-input {
+  background-color:  rgba(157, 156, 156, 0.90);
+  color: #767474;
+  border: 3px solid #c5c5c5;
+}
+
+body.qf-dark-theme .qf-search-input:focus {
+  border-color: #4a4a4a;
+  border: 5px;
+  outline: 5px;
+  transition: border-color 0.3s ease;
+}
+
+
+body.qf-dark-theme .qf-help-text {
+  color: #888888;
+}
+
+body.qf-dark-theme .qf-results-list li:hover,
+body.qf-dark-theme .qf-results-list li:focus {
+  background-color: #3a3a3a;
+}
+
+/* Replace the existing .qf-footer styles in theme-dark.css */
+body.qf-dark-theme .qf-footer {
+  background-color: rgba(41, 40, 40, 0.94);  /* Slightly darker than the container background */
+  color: #b0b0b0; /* Lighter text for better contrast */
+  border-top-color: #3a3a3a;
+}

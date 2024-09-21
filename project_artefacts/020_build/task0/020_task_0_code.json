@@ -1,0 +1,132 @@
+{
+  "tasks": [
+    {
+      "type": "command",
+      "command": {
+        "command": "mkdir quick-fields-extension",
+        "timeout": "5000",
+        "success_message": "Project directory created",
+        "command_id": "create_project_directory"
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "cd quick-fields-extension",
+        "timeout": "5000",
+        "success_message": "Changed to project directory",
+        "command_id": "change_to_project_directory"
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "npm init -y",
+        "timeout": "10000",
+        "success_message": "package.json initialized",
+        "command_id": "init_npm"
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "npm install flexsearch@0.7.31 mousetrap@1.6.5 bootstrap@5.3.0 --save-exact",
+        "timeout": "60000",
+        "success_message": "Production dependencies installed",
+        "command_id": "install_prod_dependencies"
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "npm install webpack@5.85.0 webpack-cli@5.1.1 terser-webpack-plugin@5.3.9 css-loader@6.8.1 style-loader@3.3.3 eslint@8.42.0 --save-dev --save-exact",
+        "timeout": "60000",
+        "success_message": "Development dependencies installed",
+        "command_id": "install_dev_dependencies"
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./webpack.config.js",
+        "content": "const path = require('path');\nconst TerserPlugin = require('terser-webpack-plugin');\n\nmodule.exports = {\n  entry: {\n    background: './src/background.js',\n    content: './src/content.js',\n  },\n  output: {\n    filename: '[name].bundle.js',\n    path: path.resolve(__dirname, 'dist'),\n  },\n  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',\n  devtool: process.env.NODE_ENV === 'production' ? false : 'inline-source-map',\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: ['style-loader', 'css-loader'],\n      },\n    ],\n  },\n  optimization: {\n    minimizer: [new TerserPlugin()],\n  },\n};",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./manifest.json",
+        "content": "{\n  \"manifest_version\": 3,\n  \"name\": \"Quick Fields\",\n  \"version\": \"1.0\",\n  \"description\": \"A Chrome extension for Quick Fieldsing on web pages\",\n  \"permissions\": [\n    \"activeTab\",\n    \"storage\"\n  ],\n  \"background\": {\n    \"service_worker\": \"dist/background.bundle.js\"\n  },\n  \"content_scripts\": [\n    {\n      \"matches\": [\"<all_urls>\"],\n      \"js\": [\"dist/content.bundle.js\"]\n    }\n  ],\n  \"commands\": {\n    \"_execute_action\": {\n      \"suggested_key\": {\n        \"default\": \"Ctr+Alt+L\"\n      },\n      \"description\": \"Activate the command palette\"\n    }\n  },\n  \"action\": {\n    \"default_title\": \"Quick Fields\"\n  }\n}",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "mkdir src dist",
+        "timeout": "5000",
+        "success_message": "Created src and dist directories",
+        "command_id": "create_directories"
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "touch src/background.js src/content.js src/styles.css",
+        "timeout": "5000",
+        "success_message": "Created initial source files",
+        "command_id": "create_source_files"
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./src/background.js",
+        "content": "try {\n  console.log('Background script loaded');\n  // Background script logic will be implemented here\n} catch (error) {\n  console.error('Error in background script:', error);\n}",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./src/content.js",
+        "content": "try {\n  console.log('Content script loaded');\n  import './styles.css';\n  // Content script logic will be implemented here\n} catch (error) {\n  console.error('Error in content script:', error);\n}",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./src/styles.css",
+        "content": "/* Styles for the command palette and highlighting will be added here later */",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./package.json",
+        "content": "{\n  \"name\": \"quick-fields-extension\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Chrome extension for Quick Fieldsing on web pages\",\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production webpack\",\n    \"build:dev\": \"NODE_ENV=development webpack\",\n    \"watch\": \"NODE_ENV=development webpack --watch\",\n    \"lint\": \"eslint src/**/*.js\"\n  },\n  \"devDependencies\": {\n    \"bootstrap\": \"5.3.0\",\n    \"css-loader\": \"6.8.1\",\n    \"eslint\": \"8.42.0\",\n    \"flexsearch\": \"0.7.31\",\n    \"mousetrap\": \"1.6.5\",\n    \"style-loader\": \"3.3.3\",\n    \"terser-webpack-plugin\": \"5.3.9\",\n    \"webpack\": \"5.85.0\",\n    \"webpack-cli\": \"5.1.1\"\n  }\n}",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./.eslintrc.js",
+        "content": "module.exports = {\n  env: {\n    browser: true,\n    es2021: true,\n    webextensions: true,\n  },\n  extends: 'eslint:recommended',\n  parserOptions: {\n    ecmaVersion: 12,\n    sourceType: 'module',\n  },\n  rules: {\n    // Add any specific rules here\n  },\n};",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "npm run build",
+        "timeout": "30000",
+        "success_message": "Initial build completed",
+        "command_id": "initial_build"
+      }
+    }
+  ]
+}

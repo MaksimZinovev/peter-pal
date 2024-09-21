@@ -1,0 +1,27 @@
+{
+  "tasks": [
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./src/background.js",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "save_file",
+      "save_file": {
+        "path": "./manifest.json",
+        "code_change_description": ""
+      }
+    },
+    {
+      "type": "command",
+      "command": {
+        "command": "npm run build",
+        "timeout": "30000",
+        "success_message": "Background script bundled successfully",
+        "command_id": "build_background_script"
+      }
+    }
+  ]
+}

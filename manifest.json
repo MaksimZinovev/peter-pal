@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Command Palette Extension",
+  "version": "1.1",
+  "description": "A Chrome extension for keyboard-focused search and highlighting on web pages",
+  "permissions": [
+    "activeTab", 
+    "scripting", 
+    "storage"
+  ],
+  "background": {
+    "service_worker": "dist/background.bundle.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "dist/content.bundle.js"
+      ],
+      "css": [
+        "dist/content.bundle.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dist/theme-dark.bundle.css",
+        "dist/theme-light.bundle.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "commands": {
+    "toggle-command-palette": {
+      "suggested_key": {
+        "default": "Alt+Shift+I"
+      },
+      "description": "Toggle the command palette"
+    },
+    "toggle-theme": {
+      "suggested_key": {
+        "default": "Alt+Shift+T"
+      },
+      "description": "Toggle between light and dark themes"
+    }
+  }
+}
