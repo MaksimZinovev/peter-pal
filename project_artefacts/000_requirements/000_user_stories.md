@@ -13,7 +13,7 @@ Acceptance Criteria:
 - The user's cursor is automatically focused in the search input field
 
 User Story 2:
-As a user, I want to type search queries into the command palette, so that I can find specific elements on the web page quickly.
+As a user, I want to type search queries into the command palette, so that I can find interactive elements like buttons, input fields, links on the web page quickly.
 
 Acceptance Criteria:
 - The command palette accepts text input
@@ -23,10 +23,10 @@ Acceptance Criteria:
 2. Fuzzy Text Search:
 
 User Story 3:
-As a user, I want the extension to perform fuzzy text searches, so that I can find elements even when I make typos or only remember part of the text.
+As a user, I want the extension to perform fuzzy text searches, so that I can find interactive elements like buttons, input fields, links even when I make typos or only remember part of the text.
 
 Acceptance Criteria:
-- The search function matches partial text
+- The search function matches partial text: all buttons, anchors, links and inputs on the page
 - The search function is tolerant of minor spelling mistakes
 - Search results are ranked by relevance
 - The search is performed across all visible elements on the web page

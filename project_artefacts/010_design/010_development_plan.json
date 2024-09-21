@@ -18,7 +18,7 @@
     {
       "summary": "Develop content script for command palette injection.",
       "description": "Develop the content script (content.js) for command palette injection and interaction. Implement logic to inject the command palette HTML into the page when receiving the activation message from the background script. Use Mousetrap to handle keyboard interactions within the command palette (e.g., navigation, closing). Implement functionality to focus the search input automatically when the palette is opened. Add event listeners for closing the palette when clicking outside or pressing Escape. This script will handle the direct interaction between the extension and the web page.",
-      "status": "todo"
+      "status": "done"
     },
     {
       "summary": "Integrate Flexsearch for fuzzy search functionality.",
