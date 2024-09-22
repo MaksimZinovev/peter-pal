@@ -3,6 +3,7 @@ import { Index } from "flexsearch";
 import { closeCommandPalette } from "./commandPalette.js";
 
 let searchIndex;
+let items = [];
 
 export function initializeSearch() {
   try {
@@ -23,6 +24,8 @@ export function initializeSearch() {
       if (text.trim()) {
         try {
           searchIndex.add(index, text.trim());
+          items.push({ id: index, text: text.trim() });
+          console.log(`Added item ${index} with text: "${text.trim()}"`);
         } catch (addError) {
           console.error("Error adding element to search index:", addError);
         }
@@ -35,6 +38,27 @@ export function initializeSearch() {
   }
 }
 
+function getInitialItems() {
+  if (!searchIndex) {
+    console.error("Search index not initialized");
+    return [];
+  }
+
+  console.log("All 3 items:", Object.keys(searchIndex.register).slice(0, 3));
+  return Object.keys(searchIndex.register).slice(0, 3); // Return first 3 items
+  // return items.slice(0, 3);  // Return first 3 items
+}
+
+export function displayInitialItems() {
+  if (!searchIndex) {
+    console.error("Search index not initialized");
+    return;
+  }
+  const initialItems = getInitialItems();
+  console.log("Initial items:", JSON.stringify(initialItems, null, 2));
+  displayResults(initialItems);
+}
+
 export function performSearch(query) {
   console.log("Performing search with query:", query);
   if (!searchIndex) {
@@ -45,6 +69,7 @@ export function performSearch(query) {
 
   try {
     const results = searchIndex.search(query, 10);
+    console.log("Results:", JSON.stringify(results, null, 2));
     displayResults(results);
   } catch (searchError) {
     console.error("Error performing search:", searchError);
@@ -62,7 +87,7 @@ function displayResults(results) {
   resultsList.innerHTML = "";
 
   if (results.length === 0) {
-    resultsList.innerHTML = "<li>No results found</li>";
+    resultsList.innerHTML = "<li>No items available</li>";
     return;
   }
 

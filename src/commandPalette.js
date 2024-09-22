@@ -1,9 +1,8 @@
-import { commandPaletteHTML } from './uiComponents.js';
-import { initializeSearch } from './searchManager.js';
-import { getCurrentTheme } from './themeManager.js';
+import { commandPaletteHTML } from "./uiComponents.js";
+import { displayInitialItems, initializeSearch } from "./searchManager.js";
+import { getCurrentTheme } from "./themeManager.js";
 
 let isCommandPaletteVisible = false;
-
 
 export function toggleCommandPalette() {
   const currentTheme = getCurrentTheme();
@@ -15,14 +14,15 @@ export function toggleCommandPalette() {
     isCommandPaletteVisible = !isCommandPaletteVisible;
     existingPalette.style.display = isCommandPaletteVisible ? "flex" : "none";
     if (isCommandPaletteVisible) {
-      initializeSearch();
       focusSearchInput();
+      displayInitialItems();
     }
   } else {
     try {
       document.body.insertAdjacentHTML("beforeend", commandPaletteHTML);
       isCommandPaletteVisible = true;
       initializeSearch();
+      displayInitialItems();
       focusSearchInput();
     } catch (paletteError) {
       console.error("Error creating command palette:", paletteError);

@@ -1,7 +1,7 @@
 // content.js
 import { initializeTheme, toggleTheme } from './themeManager.js';
 import { toggleCommandPalette, closeCommandPalette } from './commandPalette.js';
-import { performSearch } from './searchManager.js';
+import { performSearch, initializeSearch } from './searchManager.js';
 import { debounce } from './utils.js';
 
 
@@ -9,7 +9,7 @@ let isCommandPaletteVisible = false;
 
 try {
   console.log("Content script loaded");
-
+  initializeSearch(); 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isCommandPaletteVisible) {
       closeCommandPalette();
