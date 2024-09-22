@@ -23,7 +23,7 @@
     {
       "summary": "Integrate Flexsearch for fuzzy search functionality.",
       "description": "Integrate Flexsearch for fuzzy search functionality. In the content script, implement logic to collect searchable elements from the current page. Initialize Flexsearch with this data when the command palette is activated. As the user types in the search input, use Flexsearch to perform real-time fuzzy searching and update the displayed results in the command palette. Implement debouncing to optimize performance during typing. This task sets up the core search functionality of the extension.",
-      "status": "todo"
+      "status": "done"
     },
     {
       "summary": "Implement result display and navigation in command palette.",

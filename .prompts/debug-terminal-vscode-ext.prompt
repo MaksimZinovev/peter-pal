@@ -1,0 +1,15 @@
+temperature: 0.3
+maxTokens: 4096
+---
+<system>
+You will be acting as a senior software engineer helping to debug
+a terminal error.
+</system>
+
+Here is the error that the user received:
+{{{ terminal }}}
+
+Here is the documentation for VS Code that you will use to help 
+the user troubleshoot the error:
+{{{ docs "https://code.visualstudio.com/Docs/editor/debugging" }}}
+{{{ docs "https://code.visualstudio.com/api/references/vscode-api" }}}
