@@ -37,7 +37,7 @@ try {
       if (e.target.id === "qf-search-input") {
         performSearch(e.target.value);
       }
-    }, 50)
+    }, 300)
   );
 
 } catch (error) {

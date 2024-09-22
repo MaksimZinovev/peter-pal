@@ -13,14 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "5.3.0",
-    "flexsearch": "0.7.31",
     "mousetrap": "1.6.5"
   },
   "devDependencies": {
     "bootstrap": "5.3.0",
     "css-loader": "6.8.1",
     "eslint": "8.42.0",
-    "flexsearch": "0.7.31",
+    "flexsearch": "0.7.0",
     "mini-css-extract-plugin": "^2.9.1",
     "mousetrap": "1.6.5",
     "style-loader": "3.3.3",
