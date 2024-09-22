@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Document } from "flexsearch";
+import { Index } from "flexsearch";
 
 // Global variables to store the search index and UI state
 let searchIndex;
@@ -109,38 +109,31 @@ const commandPalette = `
 `;
 
 // Function to initialize the search index and populate it with page elements
+// #region function initializeSearch()
 function initializeSearch() {
   try {
-    // Create a new Flexsearch Document index with specific configuration
-    searchIndex = new Document({
-      document: {
-        id: "id",
-        index: ["text", "tag"], // We're indexing both the text content and the tag name
-      },
-      tokenize: "forward", // This allows for prefix matching
-      optimize: true, // Optimize for better performance
-      resolution: 9, // Higher resolution for more accurate but slower searches
+    // Create a new Flexsearch Index with specific configuration
+    searchIndex = new Index({
+      tokenize: "forward",
+      resolution: 9,
+      cache: 100,
+      minlength: 2,
+      encoder: "simple", // or use a custom encoder function if needed
     });
 
     // Select all interactive elements on the page
     const elements = document.querySelectorAll(
-      'a, button, input, textarea, select, [role="button"]'
+      'a, button, input, textarea, select, label, [role="button"]'
     );
     console.log("Total elements found:", elements.length);
     elements.forEach((el, index) => {
       // Extract text content from the element
       let text = el.textContent || el.value || el.placeholder || "";
-      let tag = el.tagName.toLowerCase();
       if (text.trim()) {
-        console.log(`Adding element to index: ${tag} - "${text.trim()}"`);
+        console.log(`Adding element to index: "${text.trim()}"`);
         try {
           // Add each element to the search index
-          searchIndex.add({
-            id: index,
-            text: text.trim(),
-            tag: tag,
-            element: el, // Store reference to the original element for later use
-          });
+          searchIndex.add(index, text.trim());
         } catch (addError) {
           console.error("Error adding element to search index:", addError);
         }
@@ -168,6 +161,7 @@ function debounce(func, wait) {
 }
 
 // Function to perform the search using Flexsearch
+// #region performSearch(query)
 function performSearch(query) {
   console.log("Performing search with query:", query);
   if (!searchIndex) {
@@ -178,11 +172,9 @@ function performSearch(query) {
 
   try {
     // Perform the search and limit to 10 results
-    const results = searchIndex.search(query, {
-      limit: 10,
-      enrich: true, // This includes the full document in the results
-    });
-    console.log("Search results:", results);
+    console.log("Search index", JSON.stringify(searchIndex, null, 2));
+    const results = searchIndex.search(query, 10);
+    // console.log("Search results:", JSON.stringify(results, null, 2));
     displayResults(results);
   } catch (searchError) {
     console.error("Error performing search:", searchError);
@@ -201,21 +193,24 @@ function displayResults(results) {
   resultsList.innerHTML = ""; // Clear previous results
 
   if (results.length === 0) {
-    resultsList.innerHTML = "&lt;li&gt;No results found&lt;/li&gt;";
+    resultsList.innerHTML = "<li>No results found</li>";
     return;
   }
 
   // Iterate through the results and create list items for each
-  results.forEach(({ result }) => {
-    result.forEach((item) => {
-      try {
-        const li = document.createElement("li");
-        li.textContent = `${item.tag}: ${item.text}`;
+  results.forEach((id) => {
+    try {
+      const li = document.createElement("li");
+      const el = document.querySelectorAll(
+        'a, button, input, textarea, select, label, [role="button"]'
+      )[id];
+      if (el) {
+        li.textContent = el.textContent || el.value || el.placeholder || "";
         // Add click event to focus and click the original element
         li.addEventListener("click", () => {
           try {
-            item.element.focus();
-            item.element.click();
+            el.focus();
+            el.click();
             closeCommandPalette();
           } catch (clickError) {
             console.error(
@@ -225,10 +220,10 @@ function displayResults(results) {
           }
         });
         resultsList.appendChild(li);
-      } catch (displayError) {
-        console.error("Error displaying search result item:", displayError);
       }
-    });
+    } catch (displayError) {
+      console.error("Error displaying search result item:", displayError);
+    }
   });
 }
 
@@ -269,7 +264,7 @@ try {
       if (e.target.id === "qf-search-input") {
         performSearch(e.target.value);
       }
-    }, 300)
+    }, 50)
   ); // Wait for 300ms of inactivity before performing the search
 
   console.log("Content script loaded");
