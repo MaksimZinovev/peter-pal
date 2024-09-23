@@ -60,6 +60,7 @@ export function displayInitialItems() {
 }
 
 export function performSearch(query) {
+  let results = getInitialItems();
   console.log("Performing search with query:", query);
   if (!searchIndex) {
     console.error("Search index not initialized");
@@ -68,8 +69,10 @@ export function performSearch(query) {
   }
 
   try {
-    const results = searchIndex.search(query, 10);
-    console.log("Results:", JSON.stringify(results, null, 2));
+    if (query) {
+      results = searchIndex.search(query, 10);
+      console.log("Results:", JSON.stringify(results, null, 2));
+    }
     displayResults(results);
   } catch (searchError) {
     console.error("Error performing search:", searchError);

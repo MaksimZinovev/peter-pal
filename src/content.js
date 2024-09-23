@@ -3,9 +3,11 @@ import { initializeTheme, toggleTheme } from './themeManager.js';
 import { toggleCommandPalette, closeCommandPalette } from './commandPalette.js';
 import { performSearch, initializeSearch } from './searchManager.js';
 import { debounce } from './utils.js';
+import { getCurrentTheme } from "./themeManager.js";
 
 
 let isCommandPaletteVisible = false;
+const currentTheme = getCurrentTheme();
 
 try {
   console.log("Content script loaded");
@@ -22,13 +24,13 @@ try {
       isCommandPaletteVisible = toggleCommandPalette();
       sendResponse({ status: "Command palette toggled" });
     } else if (request.action === "toggleTheme") {
-      toggleTheme();
+      toggleTheme(getCurrentTheme());
       sendResponse({ status: "Theme toggled" });
     }
   });
 
   // Initialize theme
-  initializeTheme();
+  initializeTheme(currentTheme);
 
   // Add event listener for search input with debounce
   document.addEventListener(

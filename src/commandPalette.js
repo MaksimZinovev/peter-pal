@@ -1,12 +1,12 @@
 import { commandPaletteHTML } from "./uiComponents.js";
 import { displayInitialItems, initializeSearch } from "./searchManager.js";
-import { getCurrentTheme } from "./themeManager.js";
+// import { getCurrentTheme } from "./themeManager.js";
 
 let isCommandPaletteVisible = false;
 
 export function toggleCommandPalette() {
-  const currentTheme = getCurrentTheme();
-  console.log(`currentTheme: ${currentTheme}`);
+  // const currentTheme = getCurrentTheme();
+  // console.log(`currentTheme: ${currentTheme}`);
   const existingPalette = document.getElementById(
     "quick-fields-command-palette"
   );

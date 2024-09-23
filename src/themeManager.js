@@ -1,4 +1,4 @@
-let currentTheme = "light";
+let _currentTheme = "light";
 
 export function loadThemeCSS(theme) {
   try {
@@ -23,18 +23,18 @@ export function loadThemeCSS(theme) {
 
 export function toggleTheme(currentTheme) {
   const oldTheme = currentTheme;
-  currentTheme = currentTheme === "dark" ? "light" : "dark";
-  console.log(`Setting theme: ${currentTheme}`);
+  _currentTheme = currentTheme === "light" ? "dark" : "light";
+  console.log(`Setting theme: ${_currentTheme}`);
   document.body.classList.remove(`qf-${oldTheme}-theme`);
-  document.body.classList.add(`qf-${currentTheme}-theme`);
+  document.body.classList.add(`qf-${_currentTheme}-theme`);
   const oldLink = document.querySelector(
     `link[href*="theme-${oldTheme}.bundle.css"]`
   );
   if (oldLink) {
     oldLink.remove();
   }
-  loadThemeCSS(currentTheme);
-  chrome.runtime.sendMessage({ action: "setTheme", theme: currentTheme });
+  loadThemeCSS(_currentTheme);
+  chrome.runtime.sendMessage({ action: "setTheme", theme: _currentTheme });
 }
 
 export function initializeTheme(currentTheme) {
@@ -49,5 +49,5 @@ export function initializeTheme(currentTheme) {
 }
 
 export function getCurrentTheme() {
-  return currentTheme;
+  return _currentTheme;
 }
