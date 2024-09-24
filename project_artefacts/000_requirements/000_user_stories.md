@@ -31,9 +31,31 @@ Acceptance Criteria:
 - Search results are ranked by relevance
 - The search is performed across all visible elements on the web page
 
-3. Dynamic Highlighting:
+3. Keyboard Navigation:
 
 User Story 4:
+As a user, I want to be able to select search result item and navigate to move through results in the command palette using(up/down arrows), updating the UI to show the currently selected item.
+
+Acceptance Criteria:
+- Pressing up/down keyboard arrows selects previous/next search result
+- Selecting the item in search results updates the UI to show the currently selected item visually distinct (e.g.,  changed background, text color)
+- Typing additional characters into search field moves selection to the first item from the top (if there are any search results matching) or "No items available".
+
+
+
+4. Dynamic Highlighting:
+   
+User Story 5:
+As a user, I want selected search results to be visually highlighted on the web page, so that I can easily locate the matching elements.
+
+Acceptance Criteria:
+- The selected search result is highlighted on the web page.
+- The highlighted element may be not in the current view (e.g. when page is long and element located at the bottom)
+- The highlight effect is visually distinct (e.g., pulsating border, changed background color)
+- The highlight effect is temporary and non-intrusive
+- The highlight effect works on various element types (e.g., text, buttons, input fields)
+
+User Story 6:
 As a user, I want to scroll to view search results using Enter key, so that I can quickly move through matches without using my mouse.
 
 Acceptance Criteria:
@@ -42,17 +64,7 @@ Acceptance Criteria:
 - Pressing Escape key hides command-pallette and deactivates highling. 
 
 
-User Story 5:
-As a user, I want selected search results to be visually highlighted on the web page, so that I can easily locate the matching elements.
-
-Acceptance Criteria:
-- The selected search result is highlighted on the web page
-- The highlight effect is visually distinct (e.g., pulsating border, changed background color)
-- The highlight effect is temporary and non-intrusive
-- The highlight effect works on various element types (e.g., text, buttons, input fields)
-
-
-4. Customization:
+1. Customization:
 
 User Story 6:
 As a user, I want to customize the extension's settings, so that I can tailor the search experience to my preferences.
