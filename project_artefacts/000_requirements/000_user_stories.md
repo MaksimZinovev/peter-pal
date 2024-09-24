@@ -34,6 +34,15 @@ Acceptance Criteria:
 3. Dynamic Highlighting:
 
 User Story 4:
+As a user, I want to scroll to view search results using Enter key, so that I can quickly move through matches without using my mouse.
+
+Acceptance Criteria:
+- Enter key scrolls page into view to ensure selected search result appears in the middle of the page
+- The selected element is still highlighted on the page 
+- Pressing Escape key hides command-pallette and deactivates highling. 
+
+
+User Story 5:
 As a user, I want selected search results to be visually highlighted on the web page, so that I can easily locate the matching elements.
 
 Acceptance Criteria:
@@ -42,13 +51,6 @@ Acceptance Criteria:
 - The highlight effect is temporary and non-intrusive
 - The highlight effect works on various element types (e.g., text, buttons, input fields)
 
-User Story 5:
-As a user, I want to scroll to view search results using Enter key, so that I can quickly move through matches without using my mouse.
-
-Acceptance Criteria:
-- Enter key scrolls page into view to ensure selected search result appears in the middle of the page
-- The selected element is still highlighted on the page 
-- Pressing Escape key hides command-pallette and deactivates highling. 
 
 4. Customization:
 

@@ -22,12 +22,12 @@
     },
     {
       "summary": "Integrate Flexsearch for fuzzy search functionality.",
-      "description": "Integrate Flexsearch for fuzzy search functionality. In the content script, implement logic to collect searchable elements from the current page. Initialize Flexsearch with this data when the command palette is activated. As the user types in the search input, use Flexsearch to perform real-time fuzzy searching and update the displayed results in the command palette. Implement debouncing to optimize performance during typing. This task sets up the core search functionality of the extension.",
+      "description": "Integrate Flexsearch for fuzzy search functionality. In the content script, implement logic to collect searchable elements from the current page. Initialize Flexsearch with this data when the command palette is activated. As the user types in the search input, use Flexsearch to perform real-time fuzzy searching and update the displayed results in the command palette. Implement debouncing to optimize performance during typing. This task sets up the core search functionality of the extension. Implement result display in the command palette. Create functions to render search results in the command palette UI, similar to the example image with icons, titles, and categories",
       "status": "done"
     },
     {
-      "summary": "Implement result display and navigation in command palette.",
-      "description": "Implement result display and navigation in the command palette. Create functions to render search results in the command palette UI, similar to the example image with icons, titles, and categories. Implement keyboard navigation (up/down arrows) to move through results, updating the UI to show the currently selected item. Add functionality to perform actions when a result is selected (e.g., by pressing Enter). This task completes the user interaction flow within the command palette.",
+      "summary": "Implement navigation in command palette.",
+      "description": "Implement navigation in the command palette. Implement keyboard navigation (up/down arrows) to move through results, updating the UI to show the currently selected item. Add functionality to perform actions when a result is selected (e.g., by pressing Enter). This task completes the user interaction flow within the command palette.",
       "status": "todo"
     },
     {
