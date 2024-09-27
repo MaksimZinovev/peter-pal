@@ -1,8 +1,11 @@
 import { commandPaletteHTML } from "./uiComponents.js";
-import { displayInitialItems, initializeSearch } from "./searchManager.js";
-// import { getCurrentTheme } from "./themeManager.js";
+import {
+  displayInitialItems,
+  initializeSearch,
+} from "./searchManager.js";
 
 let isCommandPaletteVisible = false;
+let currentSelectedIndex = -1;
 
 export function toggleCommandPalette() {
   // const currentTheme = getCurrentTheme();
@@ -16,6 +19,7 @@ export function toggleCommandPalette() {
     if (isCommandPaletteVisible) {
       focusSearchInput();
       displayInitialItems();
+      currentSelectedIndex = -1; // Reset the selected index
     }
   } else {
     try {
@@ -43,7 +47,38 @@ function focusSearchInput() {
   const searchInput = document.getElementById("qf-search-input");
   if (searchInput) {
     searchInput.focus();
+    searchInput.addEventListener("keydown", handleKeyNavigation);
   } else {
     console.error("Search input element not found");
   }
+}
+
+function handleKeyNavigation(event) {
+  const resultsList = document.getElementById("qf-results-list");
+  const items = resultsList.getElementsByTagName("li");
+
+  if (event.key === "ArrowDown") {
+    event.preventDefault();
+    currentSelectedIndex = (currentSelectedIndex + 1) % items.length;
+    updateSelectedItem(items);
+  } else if (event.key === "ArrowUp") {
+    event.preventDefault();
+    currentSelectedIndex =
+      (currentSelectedIndex - 1 + items.length) % items.length;
+    updateSelectedItem(items);
+  }
+}
+
+function updateSelectedItem(items) {
+  for (let i = 0; i < items.length; i++) {
+    if (i === currentSelectedIndex) {
+      items[i].classList.add("qf-selected");
+    } else {
+      items[i].classList.remove("qf-selected");
+    }
+  }
+}
+
+export function resetSelectedIndex() {
+  currentSelectedIndex = -1;
 }

@@ -1,6 +1,5 @@
-// searchManager.js
 import { Index } from "flexsearch";
-import { closeCommandPalette } from "./commandPalette.js";
+import { closeCommandPalette, resetSelectedIndex } from "./commandPalette.js";
 
 let searchIndex;
 let items = [];
@@ -74,6 +73,7 @@ export function performSearch(query) {
       console.log("Results:", JSON.stringify(results, null, 2));
     }
     displayResults(results);
+    resetSelectedIndex(); // Reset selection when typing
   } catch (searchError) {
     console.error("Error performing search:", searchError);
     displayResults([]);
