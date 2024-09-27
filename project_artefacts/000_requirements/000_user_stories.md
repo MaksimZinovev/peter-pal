@@ -38,10 +38,13 @@ As a user, I want to be able to select search result item and navigate to move t
 
 Acceptance Criteria:
 - Pressing up/down keyboard arrows selects previous/next search result
-- Selecting the item in search results updates the UI to show the currently selected item visually distinct (e.g.,  changed background, text color)
+- Selecting the item in search results updates the UI to show the currently selected item in command pallette visually distinct (e.g.,  changed background, text color)
 - Typing additional characters into search field moves selection to the first item from the top (if there are any search results matching) or "No items available".
 
-
+User tasks: 
+1. User has the command palette open with search results displayed
+2. User presses the up or down arrow keys to navigate through the list of search results
+3. User observes that the currently selected search result item is visually highlighted or distinguished in the command palette UI
 
 4. Dynamic Highlighting:
    
@@ -55,13 +58,41 @@ Acceptance Criteria:
 - The highlight effect is temporary and non-intrusive
 - The highlight effect works on various element types (e.g., text, buttons, input fields)
 
+
+User tasks:
+
+1. User has the command palette open with search results displayed
+2. User selects a search result item from the list using the keyboard or mouse
+3. The corresponding element on the web page is persistently highlighted with a visually distinct effect (e.g., pulsating border, changed background color)
+4. The highlight remains until the user selects a different search result or dismisses the command palette
+
 User Story 6:
 As a user, I want to scroll to view search results using Enter key, so that I can quickly move through matches without using my mouse.
 
 Acceptance Criteria:
-- Enter key scrolls page into view to ensure selected search result appears in the middle of the page
+- Enter key scrolls page into view to ensure selected search result appears in the view. Command pallette is closed
+- The selected element is still highlighted on the page 
+- Pressing "Ctrl+Enter" key conbination scrolls page into view to ensure selected search result appears in view. Command pallette is still open so that user can select next surch result and press  "Ctrl+Enter" to scroll to view.
 - The selected element is still highlighted on the page 
 - Pressing Escape key hides command-pallette and deactivates highling. 
+
+User tasks:
+
+1. User has the command palette open with search results displayed
+2. User selects a search result item from the list using keyboard or mouse  
+3. User presses the "Enter" key
+    - The page scrolls to bring the selected element into view
+    - The command palette is closed
+    - The selected element is highlighted on the page
+4. The highlight on the selected element fades away after 4 seconds
+5. User presses "Ctrl+Enter" key combination with a search result selected
+    - The page scrolls to bring the newly selected element into view  
+    - The highlight on the previously selected element is removed
+    - The newly selected element is highlighted on the page
+    - The command palette remains open
+6. User presses the "Escape" key
+    - The command palette is closed
+    - If an element is currently highlighted, the highlight fades away after 4 seconds
 
 
 1. Customization:
