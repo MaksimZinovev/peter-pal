@@ -80,6 +80,7 @@ export function performSearch(query) {
   }
 }
 
+// Modify the displayResults function
 function displayResults(results) {
   const resultsList = document.getElementById("qf-results-list");
   if (!resultsList) {
@@ -102,6 +103,8 @@ function displayResults(results) {
       )[id];
       if (el) {
         li.textContent = el.textContent || el.value || el.placeholder || "";
+        li.dataset.elementId = id;
+        el.dataset.qfId = id;
         li.addEventListener("click", () => {
           try {
             el.focus();
@@ -121,3 +124,4 @@ function displayResults(results) {
     }
   });
 }
+

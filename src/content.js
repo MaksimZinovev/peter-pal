@@ -1,21 +1,48 @@
 // content.js
-import { initializeTheme, toggleTheme } from './themeManager.js';
-import { toggleCommandPalette, closeCommandPalette } from './commandPalette.js';
-import { performSearch, initializeSearch } from './searchManager.js';
-import { debounce } from './utils.js';
+import { initializeTheme, toggleTheme } from "./themeManager.js";
+import {
+  toggleCommandPalette,
+  closeCommandPalette,
+  scrollToElement,
+  highlightElement,
+} from "./commandPalette.js";
+import { performSearch, initializeSearch } from "./searchManager.js";
+import { debounce } from "./utils.js";
 import { getCurrentTheme } from "./themeManager.js";
-
 
 let isCommandPaletteVisible = false;
 const currentTheme = getCurrentTheme();
+let lastHighlightedElement = null;
 
 try {
   console.log("Content script loaded");
-  initializeSearch(); 
+  initializeSearch();
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isCommandPaletteVisible) {
       closeCommandPalette();
       isCommandPaletteVisible = false;
+      if (lastHighlightedElement) {
+        setTimeout(() => {
+          lastHighlightedElement.classList.remove("qf-highlighted");
+        }, 4000);
+      }
+    } else if (e.key === "Enter" && isCommandPaletteVisible) {
+      const selectedItem = document.querySelector(".qf-selected");
+      if (selectedItem) {
+        const elementId = selectedItem.dataset.elementId;
+        const element = document.querySelector(`[data-qf-id="${elementId}"]`);
+
+        if (lastHighlightedElement) {
+          lastHighlightedElement.classList.remove("qf-highlighted");
+        }
+        scrollToElement(element);
+        highlightElement(element);
+        lastHighlightedElement = element;
+        if (!e.ctrlKey) {
+          closeCommandPalette();
+          isCommandPaletteVisible = false;
+        }
+      }
     }
   });
 
@@ -41,7 +68,6 @@ try {
       }
     }, 50)
   );
-
 } catch (error) {
   console.error("Error in content script:", error);
 }

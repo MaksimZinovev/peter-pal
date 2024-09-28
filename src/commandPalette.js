@@ -66,6 +66,18 @@ function handleKeyNavigation(event) {
     currentSelectedIndex =
       (currentSelectedIndex - 1 + items.length) % items.length;
     updateSelectedItem(items);
+  } else if (event.key === "Enter") {
+    event.preventDefault();
+    const selectedItem = items[currentSelectedIndex];
+    if (selectedItem) {
+      const elementId = selectedItem.dataset.elementId;
+      const element = document.querySelector(`[data-qf-id="${elementId}"]`);
+      scrollToElement(element);
+      highlightElement(element);
+      if (!event.ctrlKey) {
+        closeCommandPalette();
+      }
+    }
   }
 }
 
@@ -82,3 +94,21 @@ function updateSelectedItem(items) {
 export function resetSelectedIndex() {
   currentSelectedIndex = -1;
 }
+
+function scrollToElement(element) {
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+function highlightElement(element) {
+  if (element) {
+    element.classList.add("qf-highlighted");
+    setTimeout(() => {
+      element.classList.remove("qf-highlighted");
+    }, 4000);
+  }
+}
+
+
+export { scrollToElement, highlightElement };

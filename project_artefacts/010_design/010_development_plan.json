@@ -28,7 +28,7 @@
     {
       "summary": "Implement navigation in command palette.",
       "description": "Implement navigation in the command palette. Implement keyboard navigation (up/down arrows) to move through results, updating the UI to show the currently selected item. Add functionality to perform actions when a result is selected (e.g., by pressing Enter). This task completes the user interaction flow within the command palette.",
-      "status": "todo"
+      "status": "in progress"
     },
     {
       "summary": "Add help text and hotkey display in command palette.",

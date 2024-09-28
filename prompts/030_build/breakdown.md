@@ -43,22 +43,21 @@ Files provided: [list of files provided]
 6. Use the text below, inside TASK_INSTRUCTIONS tag. Replace each variable in double brackets with the relevant content from the context files.
 8. Output only result and ask user's permission to proceed.
 9.  Once user confirmed, read TASK_INSTRUCTIONS from your previous response, follow them precisely and output the result.
-10. Then ask  user """
+10. Generate the code  that needs to be written to implement ONLY current_task development using the context provided by user.
+11. In your code, include meaningful comments which help junior engineers to read and understand your code.
+
+- The purpose of each function
+- The logic behind key operations
+- Error handling strategies
+- The flow of the execution
+
+Do not in include too many comments explaining trivial things. 
+
+12. Then ask  user """
 Can I proceed and review the result against the task requirements?
 Here is the task description:
-
 {{ current_task }}
-
-11. Then, generate the code  that needs to be written to implement ONLY current_task development using the context provided by user.
-12. In your code, iinclude meaningful comments which help junior engineers to read and understand your code.
-
-The purpose of each function
-The logic behind key operations
-The use of Flexsearch and its configuration
-Error handling strategies
-The flow of the execution
-
-13. Once user confirmed, read your previous message with the task result, review the result against the task design document (if provided). Check that implementation meets design specification. Use the format of this example to output your check result:
+13.  Once user confirmed, read your previous message with the task result, review the result against the task design document (if provided). Check that implementation meets design specification. Use the format of this example to output your check result:
 
 ```
 Task Design:
@@ -89,7 +88,7 @@ Task Requirements:
     1. Created function or variable is not used.
     2. Move function declaration to program root
     3. Ensure minimal error handling is added
-    4. The code uses up-to-date APIs, data structures as per speciific libraries and components included in manifest, package.json, etc. For example, if the chrome extension uses   "manifest_version": 3, then web_accessible_resources section needs to be updated for Manifest V3 format. It should  be an array of objects specifying resources and their access rules:
+    4. The code uses up-to-date APIs, data structures as per speciific libraries and components included in manifest, package.json, etc. For example, if the chrome extension uses   "manifest_version": 3, then web_accessible_resources section needs to be updated for Manifest V3 format, not use MAnifets V2. It should  be an array of objects specifying resources and their access rules:
 
 ```json
 "web_accessible_resources": [{

@@ -1,0 +1,33 @@
+.
+├── README-flexsearch.md
+├── dist
+│   ├── background.bundle.js
+│   ├── content.bundle.css
+│   ├── content.bundle.js
+│   ├── content.bundle.js.LICENSE.txt
+│   ├── theme-dark.bundle.css
+│   ├── theme-dark.js
+│   ├── theme-light.bundle.css
+│   └── theme-light.js
+├── jsconfig.json
+├── knowledge
+│   └── store.md
+├── manifest.json
+├── package-lock.json
+├── package.json
+├── readme.md
+├── src
+│   ├── background.js
+│   ├── commandPalette.js
+│   ├── content.js
+│   ├── searchManager.js
+│   ├── styles.css
+│   ├── theme-dark.css
+│   ├── theme-light.css
+│   ├── themeManager.js
+│   ├── uiComponents.js
+│   └── utils.js
+├── webpack.config.js
+└── webpack.theme.config.js
+
+3 directories, 27 files

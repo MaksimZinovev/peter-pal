@@ -97,7 +97,7 @@ User tasks:
 
 1. Customization:
 
-User Story 6:
+User Story 7:
 As a user, I want to customize the extension's settings, so that I can tailor the search experience to my preferences.
 
 Acceptance Criteria:
@@ -108,7 +108,7 @@ Acceptance Criteria:
 
 5. Cross-page Compatibility:
 
-User Story 7:
+User Story 8:
 As a user, I want the Quick Fields extension to work consistently across different websites, so that I can rely on it regardless of the web page structure.
 
 Acceptance Criteria:
@@ -127,3 +127,10 @@ Acceptance Criteria:
 - The extension doesn't noticeably impact the loading time or performance of web pages
 
 These user stories cover the main features and requirements of the Quick Fields Chrome browser extension. They can be used as a starting point for development and can be further refined or expanded based on additional stakeholder input or technical considerations.
+
+
+## Next Roadmap Milestones 
+
+1. Use accessibility tree instead of tags to search elements on the page 
+2. Add commit linter 
+3. Rewrite in the future to use shadcn components 
