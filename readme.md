@@ -122,8 +122,8 @@ To use Peter Pal:
 1. Press `Alt+Shift+I` to open the command palette
 2. Start typing to search for elements on the page
 3. Use up/down arrow keys to navigate through search results
-4. Press Ctr+Enter to focus on the selected element. Palette will closed
-5. Press Enter to focus on the selected element. Palette will be closed
+4. Press `Ctr+Enter` to focus on the selected element. This does not close palette
+5. Press `Enter` to focus on the selected element and close palette
 
 For a more detailed guide on usage and features, please refer to our documentation (link to be added).
 
