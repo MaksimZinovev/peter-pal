@@ -107,6 +107,7 @@ You are currently working on task with the following description:
 
  {{ current_task }}
  {{ task_design.md }}
+ {{ comments.md }}
 
 Output a the message using the format of this example:
 
@@ -164,8 +165,6 @@ Thought: Existing files include webpack.config.js I should ask user to provide o
 {{ human_intervention_explanation.md }}
 
 {{ file_size_limit.md }}
-
-{{ comments.md }}
 
 
 Never use the port 5000 to run the app, it's reserved.

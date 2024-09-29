@@ -3,6 +3,7 @@ import { closeCommandPalette, resetSelectedIndex } from "./commandPalette.js";
 
 let searchIndex;
 let items = [];
+const initialResultsCount = 5;
 
 export function initializeSearch() {
   try {
@@ -43,8 +44,8 @@ function getInitialItems() {
     return [];
   }
 
-  console.log("All 3 items:", Object.keys(searchIndex.register).slice(0, 3));
-  return Object.keys(searchIndex.register).slice(0, 3); // Return first 3 items
+  console.log("All 3 items:", Object.keys(searchIndex.register).slice(0, initialResultsCount));
+  return Object.keys(searchIndex.register).slice(0, initialResultsCount); // Return first 3 items
   // return items.slice(0, 3);  // Return first 3 items
 }
 
