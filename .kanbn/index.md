@@ -18,12 +18,11 @@ completedColumns:
 
 ## Todo
 
-- [user-story-6-scroll-into-view](tasks/user-story-6-scroll-into-view.md)
-
 ## In Progress
 
 ## Done
 
+- [user-story-6-scroll-into-view](tasks/user-story-6-scroll-into-view.md)
 - [user-story-1-command-palette-interface](tasks/user-story-1-command-palette-interface.md)
 - [user-story-2-type-search-query](tasks/user-story-2-type-search-query.md)
 - [user-story-3-fuzzy-text-search](tasks/user-story-3-fuzzy-text-search.md)

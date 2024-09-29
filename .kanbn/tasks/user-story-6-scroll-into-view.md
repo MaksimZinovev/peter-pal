@@ -1,9 +1,10 @@
 ---
 created: 2024-09-28T10:52:47.510Z
-updated: 2024-09-28T10:55:36.249Z
+updated: 2024-09-28T12:42:46.885Z
 assigned: ""
 progress: 0
 tags: []
+completed: 2024-09-28T12:42:44.292Z
 ---
 
 # User Story 6 Scroll into view
