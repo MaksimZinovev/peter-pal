@@ -1,8 +1,13 @@
 <div align="center">
-  <img src="![alt text](img/logo.png)" alt="Peter Pal Logo" width="200">
+  <img src="./img/logo.png" alt="Peter Pal Logo" width="400" height="400"/>
   <h1>Peter Pal 🔍</h1>
   <p>Your keyboard-focused search companion for Chrome</p>
 </div>
+
+![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
+
+![GitHub top language](https://img.shields.io/github/languages/top/maksimzinovev/peter-pal) ![GitHub last commit](https://img.shields.io/github/last-commit/MaksimZinovev/peter-pal) [![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+<br/>
 
 <h2>📋 Table of Contents</h2>
 
