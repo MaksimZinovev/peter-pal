@@ -14,9 +14,11 @@ completedColumns:
 - [user-story-8-performance](tasks/user-story-8-performance.md)
 - [use-accessibility-tree-instead-of-tags-to-search-elements-on-the-page](tasks/use-accessibility-tree-instead-of-tags-to-search-elements-on-the-page.md)
 - [add-commit-linter](tasks/add-commit-linter.md)
-- [description](tasks/description.md)
+- [app-description-for-chrome-store](tasks/app-description-for-chrome-store.md)
 
 ## Todo
+
+- [inconsistent-font-family-and-size](tasks/inconsistent-font-family-and-size.md)
 
 ## In Progress
 
