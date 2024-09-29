@@ -1,13 +1,13 @@
 ---
 created: 2024-09-29T01:31:51.095Z
-updated: 2024-09-29T01:31:51.091Z
+updated: 2024-09-29T01:39:24.652Z
 assigned: ""
 progress: 0
 tags:
   - bug
 ---
 
-# Inconsistent font family and size
+# ppa11 Inconsistent font family and size
 
 The font in command plette is Inconsistent (font family and size). 
 
@@ -30,6 +30,3 @@ Expected results:
 Palette should have consistent font across all websites
 - Font size 18px. 
 - Font family: Segoe UI or Rooboto
-
-
-
