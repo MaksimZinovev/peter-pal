@@ -21,15 +21,32 @@
 
 <h2>🧐 About</h2>
 
-Peter Pal is a powerful Chrome extension that provides a command palette for effortless, user-friendly, keyboard-focused search on web pages. It allows quick search of elements by text and highlights them for improved visibility. The extension aims to streamline navigation and enhance productivity for users interacting with content-heavy web pages.
+Peter Pal is a tiny Chrome extension that provides a command palette for effortless, user-friendly, keyboard-focused search on web pages. It allows quick search of elements by text and highlights them for improved visibility. The extension aims to streamline navigation and enhance productivity for users interacting with content-heavy web pages.
+
+> [!NOTE]
+> This is work in progress and my first open-source project I built using AI tools. I am not a software developer. This is educational project helping me to learn how to build web apps. Expect bugs and mistakes in code 🐞
+
+> [!NOTE]
+> I will appreciate your feedback. Feel free to submit your bug report of feature request. Click this [link](https://github.com/MaksimZinovev/peter-pal/issues).
+> I hope this repo will be helpful for other people. 
+
+
+
+
+<div align="center">
+  <img src="./img/palette-dark.png" alt="Command Pallete Dard" width="800" />
+  <<br/>
+  <img src="./img/palette-light.png" alt="Command Pallete Dard" width="800" />
+  
+</div>
 
 <h2>✨ Features</h2>
 
 1. 🎨 Command Palette Interface: An intuitive keyboard-driven interface using a command palette for efficient text-based searches.
 2. 🔍 Fuzzy Text Search: Super-fast fuzzy search capability that matches elements based on their textual content, even with partial or misspelled queries.
-3. 🌟 Dynamic Highlighting: Selected search results are instantly highlighted on the web page with dynamic visual effects, making it easier for users to spot the targeted elements amid a large number of fields and components.
-4. ⌨️ Keyboard navigation: Ability to select search result items and navigate through results in the command palette using up/down arrow keys.
-5. 🎯 Automatic focus on element: Ability to scroll to view selected search results using the Enter key, so that users can quickly move through matches without using their mouse.
+3. ⌨️ Keyboard navigation: Ability to select search result items and navigate through results in the command palette using up/down arrow keys.
+4. 🎯 Automatic focus on element: Ability to scroll to view selected search results using the Enter key, so that users can quickly move through matches without using their mouse.
+5. 🌟 Dynamic Highlighting: After pressing Enter or Ctr+Enter selected element is instantly highlighted on the web page with dynamic visual effects, making it easier for users to spot the targeted elements amid a large number of fields and components.
 6. 🌓 Theme Toggle: Switch between light and dark themes for comfortable usage in different environments.
 
 <h2>🚀 Getting Started</h2>
@@ -105,7 +122,8 @@ To use Peter Pal:
 1. Press `Alt+Shift+I` to open the command palette
 2. Start typing to search for elements on the page
 3. Use up/down arrow keys to navigate through search results
-4. Press Enter to focus on the selected element
+4. Press Ctr+Enter to focus on the selected element. Palette will closed
+5. Press Enter to focus on the selected element. Palette will be closed
 
 For a more detailed guide on usage and features, please refer to our documentation (link to be added).
 
@@ -123,3 +141,9 @@ For more information on contributing, please see our contribution guidelines (li
 <h2>📄 License</h2>
 
 This project is licensed under the Apache-2.0 license. See the LICENSE file for details.
+
+## Primary contributors
+
+<a href="https://github.com/MaksimZinovev"><img src="https://avatars.githubusercontent.com/u/53397443?v=4" title="Maksim Zinovev" width="50" height="50"></a>
+<br /><br />
+<a href="https://x.com/maxfaber_Om">![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/maxfaber_Om)</a>
