@@ -61,7 +61,7 @@ Task Design:
 ✔️ Custom CSS for increased font size and padding
 ```
 
-12. Read your previous message with the task result, review the result against the task requirements.
+12. Read your previous message with the task result, review the result against the task description.
 Use the format of this example to output your check result:
 
 ```
@@ -105,7 +105,7 @@ We've broken the development of this {{ app_type }} down to these tasks:
 You are currently working on task with the following description:
 
  {{ current_task }}
- {{ task_design.md }}
+ {{ task_design.md }} (optional)
 
 Output a the message using the format of this example:
 
