@@ -27,12 +27,11 @@ columnSorting:
 
 ## Todo
 
-- [ppa11-inconsistent-font-family-and-size](tasks/ppa11-inconsistent-font-family-and-size.md)
-
 ## In Progress
 
 ## Done
 
+- [ppa11-inconsistent-font-family-and-size](tasks/ppa11-inconsistent-font-family-and-size.md)
 - [ppa06-user-story-6-scroll-into-view](tasks/ppa06-user-story-6-scroll-into-view.md)
 - [ppa05-user-story-5-dynamic-highlighting](tasks/ppa05-user-story-5-dynamic-highlighting.md)
 - [ppa04-user-story-4-keyboard-navigation](tasks/ppa04-user-story-4-keyboard-navigation.md)

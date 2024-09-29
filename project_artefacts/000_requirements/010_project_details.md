@@ -3,7 +3,7 @@
 
 Here is a project description for a Chrome extension for Quick Fieldsing on web pages:
 
-The project is a powerful Chrome extension that enables effortless, user-friendly, keyboard-focused search on web pages, allowing quick search of elements by text and highlighting them for improved visibility. The extension aims to streamline navigation and enhance productivity for users interacting with content-heavy web pages.
+The project is a powerful Chrome extension command palette that enables effortless, user-friendly, keyboard-focused search on web pages, allowing quick search of elements by text and highlighting them for improved visibility. Command palette is a central element of the extension. The extension aims to streamline navigation and enhance productivity for users interacting with content-heavy web pages.
 
 Features:
 1. Command Palette Interface: An intuitive keyboard-driven interface using a command palette for efficient text-based searches.

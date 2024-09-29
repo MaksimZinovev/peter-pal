@@ -1,10 +1,11 @@
 ---
 created: 2024-09-29T01:31:51.095Z
-updated: 2024-09-29T01:39:24.652Z
+updated: 2024-09-29T05:05:34.023Z
 assigned: ""
 progress: 0
 tags:
   - bug
+completed: 2024-09-29T05:05:34.023Z
 ---
 
 # ppa11 Inconsistent font family and size
