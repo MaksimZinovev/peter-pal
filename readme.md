@@ -4,8 +4,7 @@
   <p>Your keyboard-focused search companion for Chrome</p>
 </div>
 
-![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
-
+![Static Badge](https://img.shields.io/badge/mission-your_keyboard_focused_search_companion_for_chrome-purple)  
 ![GitHub top language](https://img.shields.io/github/languages/top/maksimzinovev/peter-pal) ![GitHub last commit](https://img.shields.io/github/last-commit/MaksimZinovev/peter-pal) [![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 <br/>
 
