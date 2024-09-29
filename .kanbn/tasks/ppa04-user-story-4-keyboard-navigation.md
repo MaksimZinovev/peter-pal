@@ -1,13 +1,13 @@
 ---
 created: 2024-09-28T10:51:40.610Z
-updated: 2024-09-28T10:51:40.607Z
+updated: 2024-09-29T01:35:37.471Z
 assigned: ""
 progress: 0
 tags: []
 completed: 2024-09-28T10:51:40.610Z
 ---
 
-# User Story 4 Keyboard navigation
+# ppa04 User Story 4 Keyboard navigation
 
 User Story 4:
 As a user, I want to be able to select search result item and navigate to move through results in the command palette using(up/down arrows), updating the UI to show the currently selected item.

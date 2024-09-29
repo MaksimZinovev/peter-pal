@@ -1,12 +1,13 @@
 ---
 created: 2024-09-28T10:53:29.847Z
-updated: 2024-09-28T10:53:29.843Z
+updated: 2024-09-29T01:36:53.002Z
 assigned: ""
 progress: 0
-tags: []
+tags:
+  - feature
 ---
 
-# User Story 7 Customization
+# ppa07 User Story 7 Customization
 
 User Story 7:
 As a user, I want to customize the extension's settings, so that I can tailor the search experience to my preferences.

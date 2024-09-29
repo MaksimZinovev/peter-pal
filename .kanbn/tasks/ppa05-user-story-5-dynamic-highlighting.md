@@ -1,13 +1,14 @@
 ---
 created: 2024-09-28T10:52:09.945Z
-updated: 2024-09-28T10:52:09.942Z
+updated: 2024-09-29T01:36:00.536Z
 assigned: ""
-progress: 0
-tags: []
-completed: 2024-09-28T10:52:09.945Z
+progress: 1
+tags:
+  - feature
+completed: 2024-09-28T00:00:00.000Z
 ---
 
-# User Story 5 Dynamic Highlighting
+# ppa05 User Story 5 Dynamic Highlighting
 
 User Story 5:
 As a user, I want selected search results to be visually highlighted on the web page, so that I can easily locate the matching elements.

@@ -1,13 +1,13 @@
 ---
 created: 2024-09-28T10:52:47.510Z
-updated: 2024-09-28T12:42:46.885Z
+updated: 2024-09-29T01:36:17.714Z
 assigned: ""
-progress: 0
+progress: 1
 tags: []
-completed: 2024-09-28T12:42:44.292Z
+completed: 2024-09-28T00:00:00.000Z
 ---
 
-# User Story 6 Scroll into view
+# ppa06 User Story 6 Scroll into view
 
 User Story 6:
 As a user, I want to scroll to view search results using Enter key, so that I can quickly move through matches without using my mouse.
