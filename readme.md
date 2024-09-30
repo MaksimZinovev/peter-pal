@@ -30,15 +30,14 @@ Peter Pal is a tiny Chrome extension that provides a command palette for effortl
 > I will appreciate your feedback. Feel free to submit your bug report of feature request. Click this [link](https://github.com/MaksimZinovev/peter-pal/issues).
 > I hope this repo will be helpful for other people. 
 
-
-
+Check out my YouTube channel for more info. 
 
 <div align="center">
-  <img src="./img/palette-dark.png" alt="Command Pallete Dard" width="800" />
-  <<br/>
-  <img src="./img/palette-light.png" alt="Command Pallete Dard" width="800" />
-  
+  <a href="https://youtu.be/5PGIb2lSfHM" target="_blank">
+    <img src="./img/youtube-thumbnail.png" alt="Youtube Peter Pal" width="400" />
+  </a>
 </div>
+
 
 <h2>✨ Features</h2>
 
@@ -48,6 +47,14 @@ Peter Pal is a tiny Chrome extension that provides a command palette for effortl
 4. 🎯 Automatic focus on element: Ability to scroll to view selected search results using the Enter key, so that users can quickly move through matches without using their mouse.
 5. 🌟 Dynamic Highlighting: After pressing Enter or Ctr+Enter selected element is instantly highlighted on the web page with dynamic visual effects, making it easier for users to spot the targeted elements amid a large number of fields and components.
 6. 🌓 Theme Toggle: Switch between light and dark themes for comfortable usage in different environments.
+
+<div align="center">
+  <img src="./img/palette-dark.png" alt="Command Pallete Dard" width="800" />
+  <br/>
+  <img src="./img/palette-light.png" alt="Command Pallete Dard" width="800" />
+  
+</div>
+
 
 <h2>🚀 Getting Started</h2>
 
@@ -73,7 +80,6 @@ To work on Peter Pal, you'll need:
    ```
    npm install
    ```
-
 3. Build the extension:
    - For production:
      ```
@@ -101,7 +107,7 @@ Common recommendations for Chrome extension development:
 - Familiarize yourself with the [Chrome Extension Documentation](https://developer.chrome.com/docs/extensions/)
 - Keep security in mind and follow best practices for extension development
 
-<h3>👥 For End Users</h3>
+<h3>👥 For End Users (Coming Soon)</h3>
 
 To install Peter Pal as an end user:
 
