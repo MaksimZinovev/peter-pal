@@ -1,4 +1,3 @@
-You're absolutely right, and thank you for pointing that out. The `store` feature in FlexSearch is indeed very useful and can be leveraged to solve our problem. Let's explore this in more detail:
 
 Purpose of `store`:
 The `store` in FlexSearch is used to keep the original documents or data associated with each indexed item. When you add items to the index with the `store` option enabled, FlexSearch not only indexes the text for searching but also keeps a copy of the original data. This is extremely useful when you need to retrieve the full content of matched items, not just their IDs.
