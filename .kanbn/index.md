@@ -18,6 +18,9 @@ columnSorting:
 
 ## Backlog
 
+- [ppa14-capture-text-of-an-area-and-format-as-a-markdown-list](tasks/ppa14-capture-text-of-an-area-and-format-as-a-markdown-list.md)
+- [ppa13-copy-element-text-to-capture-sequence-of-steps](tasks/ppa13-copy-element-text-to-capture-sequence-of-steps.md)
+- [ppa12-instant-highlighting-of-current-search-query-when-switching-tab-on-the-page](tasks/ppa12-instant-highlighting-of-current-search-query-when-switching-tab-on-the-page.md)
 - [ppa10-user-story-8-cross-page-compatibility](tasks/ppa10-user-story-8-cross-page-compatibility.md)
 - [ppa09-use-accessibility-tree-instead-of-tags-to-search-elements-on-the-page](tasks/ppa09-use-accessibility-tree-instead-of-tags-to-search-elements-on-the-page.md)
 - [ppa08-user-story-8-performance](tasks/ppa08-user-story-8-performance.md)
