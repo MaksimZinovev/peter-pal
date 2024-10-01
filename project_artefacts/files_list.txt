@@ -1,6 +1,5 @@
 .
 ├── LICENSE
-├── README-flexsearch.md
 ├── dist
 │   ├── background.bundle.js
 │   ├── content.bundle.css
@@ -10,13 +9,17 @@
 │   ├── theme-dark.js
 │   ├── theme-light.bundle.css
 │   └── theme-light.js
+├── export
+│   └── tp-export.json
 ├── img
 │   ├── logo.png
 │   ├── logo.svg
 │   ├── palette-dark.png
-│   └── palette-light.png
+│   ├── palette-light.png
+│   └── youtube-thumbnail.png
 ├── jsconfig.json
 ├── knowledge
+│   ├── README-flexsearch.md
 │   └── store.md
 ├── manifest.json
 ├── package-lock.json
@@ -36,4 +39,4 @@
 ├── webpack.config.js
 └── webpack.theme.config.js
 
-4 directories, 32 files
+5 directories, 34 files
