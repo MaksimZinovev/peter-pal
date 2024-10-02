@@ -15,3 +15,8 @@ describe("themManager", () => {
     expect(["light", "dark"]).toContain(theme);
   });
 });
+
+describe("themManager", () => {
+  it("should return the current theme", () => { })
+}) 
+
