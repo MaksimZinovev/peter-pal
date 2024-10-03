@@ -129,11 +129,22 @@ Acceptance Criteria:
 These user stories cover the main features and requirements of the Quick Fields Chrome browser extension. They can be used as a starting point for development and can be further refined or expanded based on additional stakeholder input or technical considerations.
 
 
-## Next Roadmap Milestones 
+## Roadmap 
 
-1. Use accessibility tree instead of tags to search elements on the page 
-2. Add commit linter 
-3. Rewrite in the future to use shadcn components 
+1. Search mode improvements: classic. Search all text displayed on page
+2. Use accessibility tree instead of tags to search elements on the page 
+3. Add commit linter 
+4. Rewrite in the future to use shadcn components
+5. Highlighting improvements: Highlight the row: full-page width area containing the element. Height of the row 70px
+6. Serch mode improvements: Do not display in results elements with no text
+7. Serch mode improvements: display in fuzzy-search suggestions prefix - the tag of the element
+8. Navigation Improvements:
+   1. Automtically focus on palette input field when palette is triggered
+   2. Type query, automatically select first result from the top
+   3. Press "Shft+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
+   3. Press "Ctrl+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
+
+
 
 
 
@@ -146,3 +157,4 @@ Acceptance Criteria:
 - Pressing "Ctrl+Enter" key conbination scrolls page into view to ensure selected search result appears in view. Command pallette is still open so that user can select next surch result and press  "Ctrl+Enter" to scroll to view.
 - The selected element is still highlighted on the page 
 - Pressing Escape key hides command-pallette and deactivates highling. 
+
