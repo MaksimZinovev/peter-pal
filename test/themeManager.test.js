@@ -16,7 +16,4 @@ describe("themManager", () => {
   });
 });
 
-describe("themManager", () => {
-  it("should return the current theme", () => { })
-}) 
 
