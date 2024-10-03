@@ -118,7 +118,7 @@ Acceptance Criteria:
 
 6. Performance:
 
-User Story 8:
+User Story 9:
 As a user, I want the Quick Fields extension to perform searches quickly and efficiently, so that it doesn't slow down my browsing experience.
 
 Acceptance Criteria:
@@ -134,3 +134,15 @@ These user stories cover the main features and requirements of the Quick Fields 
 1. Use accessibility tree instead of tags to search elements on the page 
 2. Add commit linter 
 3. Rewrite in the future to use shadcn components 
+
+
+
+User Story 10:
+As a user, I want to scroll to view search results using Enter key, so that I can quickly move through matches without using my mouse.
+
+Acceptance Criteria:
+- Enter key scrolls page into view to ensure selected search result appears in the view. Command pallette is closed
+- The selected element is still highlighted on the page 
+- Pressing "Ctrl+Enter" key conbination scrolls page into view to ensure selected search result appears in view. Command pallette is still open so that user can select next surch result and press  "Ctrl+Enter" to scroll to view.
+- The selected element is still highlighted on the page 
+- Pressing Escape key hides command-pallette and deactivates highling. 
