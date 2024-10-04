@@ -4,6 +4,7 @@ import { closeCommandPalette, resetSelectedIndex } from "./commandPalette.js";
 let searchIndex;
 let items = [];
 const initialResultsCount = 5;
+const DEBUG_MODE = false;
 
 export function initializeSearch() {
   try {
@@ -21,7 +22,7 @@ export function initializeSearch() {
     console.log("Total elements found:", elements.length);
     elements.forEach((el, index) => {
       let text = el.textContent || el.value || el.placeholder || "";
-      if (text.trim()) {
+        if (text.trim()) {
         try {
           searchIndex.add(index, text.trim());
           items.push({ id: index, text: text.trim() });
@@ -31,6 +32,11 @@ export function initializeSearch() {
         }
       }
     });
+    if (DEBUG_MODE) {
+      console.table(items);
+    }
+    // eslint-disable-next-line no-debugger
+    debugger;
     console.log("Search index initialized successfully");
   } catch (initError) {
     console.error("Error initializing search index:", initError);

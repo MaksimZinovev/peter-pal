@@ -15,6 +15,9 @@ const currentTheme = getCurrentTheme();
 let lastHighlightedElement = null;
 
 try {
+  // 
+  // eslint-disable-next-line no-debugger
+  // debugger;
   console.log("Content script loaded");
   initializeSearch();
   document.addEventListener("keydown", (e) => {

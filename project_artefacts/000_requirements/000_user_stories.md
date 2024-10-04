@@ -131,6 +131,7 @@ These user stories cover the main features and requirements of the Quick Fields 
 
 ## Roadmap 
 
+1. Search mode improvements: remove duplicates from search results
 1. Search mode improvements: classic. Search all text displayed on page
 2. Use accessibility tree instead of tags to search elements on the page 
 3. Add commit linter 
