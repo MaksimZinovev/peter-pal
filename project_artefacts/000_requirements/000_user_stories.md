@@ -132,6 +132,10 @@ These user stories cover the main features and requirements of the Quick Fields 
 ## Roadmap 
 
 1. Search mode improvements: remove duplicates from search results
+1. Search mode improvements: trim too long text
+1. Search mode improvements: do not display elements with text like `​​&ZeroWidthSpace​`
+1. Search mode improvements: filter specific kind of elements, e.g. all childs of `nav`
+1. Search mode improvements: allow to see all search results in palette and scroll using mouse, page down. page up
 1. Search mode improvements: classic. Search all text displayed on page
 2. Use accessibility tree instead of tags to search elements on the page 
 3. Add commit linter 
@@ -159,3 +163,26 @@ Acceptance Criteria:
 - The selected element is still highlighted on the page 
 - Pressing Escape key hides command-pallette and deactivates highling. 
 
+
+
+##  Search mode improvements: remove duplicates from search results
+
+1. Elements with the same tag-text
+
+
+## Search mode improvements: filter specific kind of elements, e.g. all childs of `nav`
+
+1. Can use syntax of css locators 
+2. Use case: select one element from the group (e.g. menu item), then with a single command list all siblings (e.g. all other menu items), then select desired element using keyboard, mous or filter by text
+
+```markdown
+Some examples:
+li a DOM descendant combinator. All a tags that are a child of li tags
+div.row * selects all elements that are descendant (or child) of the elements with div tag and ‘row’ class
+li > a Difference combinator. Select direct descendants, instead of all descendants like the descendant selectors
+li + a The adjacent combinator. It selects the element that is immediately preceded by the former element. In this case, only the first a after each li.
+li, a Selects all a elements and all li elements.
+li ~ a The sibling combinator. Selects a element following a li element.
+```
+
+https://www.freecodecamp.org/news/css-selectors-cheat-sheet/

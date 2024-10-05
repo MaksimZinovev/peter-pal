@@ -3,8 +3,36 @@ import { closeCommandPalette, resetSelectedIndex } from "./commandPalette.js";
 
 let searchIndex;
 let items = [];
-const initialResultsCount = 5;
-const DEBUG_MODE = false;
+const initialResultsCount = 5; 
+const DEBUG_MODE = false; 
+/* items =  [
+  {
+    "id": 0,
+    "text": "screenpipe",
+    "tagName": "A"
+  },
+  {
+    "id": 1,
+    "text": "screenpipe",
+    "tagName": "A"
+  }
+];  //? 
+
+const removeDuplicates = (arr) => {
+  const uniqueMap = new Map();
+  
+  return arr.filter(obj => {
+    const key = `${obj.text}-${obj.tagName}`;
+    
+    if (!uniqueMap.has(key)) {
+      uniqueMap.set(key, true);
+      return true;
+    }
+    
+    return false;
+  });
+}; 
+removeDuplicates(items) //?  */
 
 export function initializeSearch() {
   try {
@@ -33,10 +61,11 @@ export function initializeSearch() {
       }
     });
     if (DEBUG_MODE) {
-      console.table(items);
+      console.table(items); 
     }
     // eslint-disable-next-line no-debugger
-    debugger;
+    // debugger; 
+
     console.log("Search index initialized successfully");
   } catch (initError) {
     console.error("Error initializing search index:", initError);
@@ -61,7 +90,7 @@ export function displayInitialItems() {
     return;
   }
   const initialItems = getInitialItems();
-  console.log("Initial items:", JSON.stringify(initialItems, null, 2));
+  // console.log("Initial items:", JSON.stringify(initialItems, null, 2));
   displayResults(initialItems);
 }
 
