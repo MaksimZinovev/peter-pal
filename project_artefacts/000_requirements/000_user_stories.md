@@ -132,22 +132,22 @@ These user stories cover the main features and requirements of the Quick Fields 
 ## Roadmap 
 
 1. Search mode improvements: remove duplicates from search results
-1. Search mode improvements: trim too long text
-1. Search mode improvements: do not display elements with text like `​​&ZeroWidthSpace​`
-1. Search mode improvements: filter specific kind of elements, e.g. all childs of `nav`
-1. Search mode improvements: allow to see all search results in palette and scroll using mouse, page down. page up
-1. Search mode improvements: classic. Search all text displayed on page
-2. Use accessibility tree instead of tags to search elements on the page 
-3. Add commit linter 
-4. Rewrite in the future to use shadcn components
-5. Highlighting improvements: Highlight the row: full-page width area containing the element. Height of the row 70px
-6. Serch mode improvements: Do not display in results elements with no text
-7. Serch mode improvements: display in fuzzy-search suggestions prefix - the tag of the element
-8. Navigation Improvements:
+2. Search mode improvements: trim too long text
+3. Search mode improvements: filter specific kind of elements, e.g. all childs of `nav`
+4. Search mode improvements: do not display elements with text like `​​&ZeroWidthSpace​`
+5. Search mode improvements: allow to see all search results in palette and scroll using mouse, page down. page up
+6. Search mode improvements: classic. Search all text displayed on page
+7. Use accessibility tree instead of tags to search elements on the page 
+8. Add commit linter 
+9. Rewrite in the future to use shadcn components
+10. Highlighting improvements: Highlight the row: full-page width area containing the element. Height of the row 70px
+11. Serch mode improvements: Do not display in results elements with no text
+12. Serch mode improvements: display in fuzzy-search suggestions prefix - the tag of the element
+13. Navigation Improvements:
    1. Automtically focus on palette input field when palette is triggered
    2. Type query, automatically select first result from the top
    3. Press "Shft+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
-   3. Press "Ctrl+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
+   4. Press "Ctrl+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
 
 
 
