@@ -1,11 +1,9 @@
 import { commandPaletteHTML } from "./uiComponents.js";
-import {
-  displayInitialItems,
-  initializeSearch,
-} from "./searchManager.js";
+import { displayInitialItems, initializeSearch } from "./searchManager.js";
 
 let isCommandPaletteVisible = false;
 let currentSelectedIndex = -1;
+let isKeyNavigationListenerAdded = false;
 
 export function toggleCommandPalette() {
   // const currentTheme = getCurrentTheme();
@@ -40,6 +38,12 @@ export function closeCommandPalette() {
   if (palette) {
     palette.style.display = "none";
     isCommandPaletteVisible = false;
+
+    const searchInput = document.getElementById("qf-search-input");
+    if (searchInput && isKeyNavigationListenerAdded) {
+      searchInput.removeEventstener("keydown", handleKeyNavigation);
+      isKeyNavigationListenerAdded = false;
+    }
   }
 }
 
@@ -47,7 +51,13 @@ function focusSearchInput() {
   const searchInput = document.getElementById("qf-search-input");
   if (searchInput) {
     searchInput.focus();
-    searchInput.addEventListener("keydown", handleKeyNavigation);
+    if (!isKeyNavigationListenerAdded) {
+      searchInput.addEventListener("keydown", handleKeyNavigation);
+      isKeyNavigationListenerAdded = true;
+    }
+
+    const inputLength = searchInput.value.length;
+    searchInput.setSelectionRange(inputLength, inputLength);
   } else {
     console.error("Search input element not found");
   }
@@ -109,6 +119,5 @@ function highlightElement(element) {
     }, 4000);
   }
 }
-
 
 export { scrollToElement, highlightElement };

@@ -216,3 +216,8 @@ Technical Specification:
 
 1. Get list of existing files in the project using tree command 
 2. Attach context files in agent chat  
+
+
+## Create VS Code task that will create a folder with all required files 
+
+Create task for each repetitive development stage. For example, task breakdown. 

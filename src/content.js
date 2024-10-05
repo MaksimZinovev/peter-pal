@@ -52,6 +52,12 @@ try {
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "toggleCommandPalette") {
       isCommandPaletteVisible = toggleCommandPalette();
+      if (isCommandPaletteVisible) {
+        const searchInput = document.getElementById("qf-search-input");
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }
       sendResponse({ status: "Command palette toggled" });
     } else if (request.action === "toggleTheme") {
       toggleTheme(getCurrentTheme());

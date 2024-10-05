@@ -4,13 +4,10 @@
 │   ├── background.bundle.js
 │   ├── content.bundle.css
 │   ├── content.bundle.js
-│   ├── content.bundle.js.LICENSE.txt
 │   ├── theme-dark.bundle.css
 │   ├── theme-dark.js
 │   ├── theme-light.bundle.css
 │   └── theme-light.js
-├── export
-│   └── tp-export.json
 ├── img
 │   ├── logo.png
 │   ├── logo.svg
@@ -22,6 +19,7 @@
 │   ├── README-flexsearch.md
 │   └── store.md
 ├── manifest.json
+├── out.md
 ├── package-lock.json
 ├── package.json
 ├── readme.md
@@ -36,7 +34,12 @@
 │   ├── themeManager.js
 │   ├── uiComponents.js
 │   └── utils.js
+├── test
+│   ├── setup.js
+│   ├── themeManager.test.js
+│   └── utils.test.js
+├── vitest.config.js
 ├── webpack.config.js
 └── webpack.theme.config.js
 
-5 directories, 34 files
+5 directories, 37 files
