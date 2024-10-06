@@ -15,7 +15,7 @@ const currentTheme = getCurrentTheme();
 let lastHighlightedElement = null;
 
 try {
-  // 
+  //
   // eslint-disable-next-line no-debugger
   // debugger;
   console.log("Content script loaded");
@@ -65,10 +65,8 @@ try {
     }
   });
 
-  // Initialize theme
   initializeTheme(currentTheme);
 
-  // Add event listener for search input with debounce
   document.addEventListener(
     "input",
     debounce((e) => {

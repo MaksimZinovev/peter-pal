@@ -1,9 +1,9 @@
 import { commandPaletteHTML } from "./uiComponents.js";
-import { displayInitialItems, initializeSearch } from "./searchManager.js";
+import { initializeSearch, getInitialItems } from "./searchManager.js";
 
 let isCommandPaletteVisible = false;
-let currentSelectedIndex = -1;
 let isKeyNavigationListenerAdded = false;
+let currentSelectedIndex = -1;
 
 export function toggleCommandPalette() {
   // const currentTheme = getCurrentTheme();
@@ -17,7 +17,6 @@ export function toggleCommandPalette() {
     if (isCommandPaletteVisible) {
       focusSearchInput();
       displayInitialItems();
-      currentSelectedIndex = -1; // Reset the selected index
     }
   } else {
     try {
@@ -92,11 +91,14 @@ function handleKeyNavigation(event) {
 }
 
 function updateSelectedItem(items) {
-  for (let i = 0; i < items.length; i++) {
-    if (i === currentSelectedIndex) {
-      items[i].classList.add("qf-selected");
-    } else {
-      items[i].classList.remove("qf-selected");
+  // if
+  if (items.length > 0) {
+    for (let i = 0; i < items.length; i++) {
+      if (i === currentSelectedIndex) {
+        items[i].classList.add("qf-selected");
+      } else {
+        items[i].classList.remove("qf-selected");
+      }
     }
   }
 }
@@ -120,4 +122,77 @@ function highlightElement(element) {
   }
 }
 
-export { scrollToElement, highlightElement };
+function selectFirstResult() {
+  const resultsList = document.getElementById("qf-results-list");
+  if (resultsList) {
+    const items = Array.from(resultsList.getElementsByTagName("li"));
+    if (items.length > 0) {
+      currentSelectedIndex = 0;
+      updateSelectedItem(items);
+    } else {
+      currentSelectedIndex = -1;
+    }
+  }
+}
+
+export function displayInitialItems() {
+  // if (!searchIndex) {
+  //   console.error("Search index not initialized");
+  //   return;
+  // }
+  const initialItems = getInitialItems();
+  if (initialItems) {
+    // console.log("Initial items:", JSON.stringify(initialItems, null, 2));
+    displayResults(initialItems);
+  } else  {
+    console.error("displayInitialItems: No items to display");
+  }
+}
+
+function displayResults(results) {
+  const resultsList = document.getElementById("qf-results-list");
+  if (!resultsList) {
+    console.error("Results list element not found");
+    return;
+  }
+
+  resultsList.innerHTML = "";
+
+  if (results.length === 0) {
+    resultsList.innerHTML = "<li>No elements found</li>";
+    resetSelectedIndex();
+    return;
+  }
+
+  results.forEach((id) => {
+    try {
+      const li = document.createElement("li");
+      const el = document.querySelectorAll(
+        'a, button, input, textarea, select, label, [role="button"]'
+      )[id];
+      if (el) {
+        li.textContent = el.textContent || el.value || el.placeholder || "";
+        li.dataset.elementId = id;
+        el.dataset.qfId = id;
+        li.addEventListener("click", () => {
+          try {
+            el.focus();
+            el.click();
+            closeCommandPalette();
+          } catch (clickError) {
+            console.error(
+              "Error interacting with search result element:",
+              clickError
+            );
+          }
+        });
+        resultsList.appendChild(li);
+      }
+    } catch (displayError) {
+      console.error("Error displaying search result item:", displayError);
+    }
+  });
+  selectFirstResult();
+}
+
+export { scrollToElement, highlightElement, displayResults }
