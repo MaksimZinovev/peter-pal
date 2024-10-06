@@ -18,6 +18,7 @@ columnSorting:
 
 ## Backlog
 
+- [ppa17-switching-theme-should-be-only-available-when-palette-is-visible](tasks/ppa17-switching-theme-should-be-only-available-when-palette-is-visible.md)
 - [ppa14-capture-text-of-an-area-and-format-as-a-markdown-list](tasks/ppa14-capture-text-of-an-area-and-format-as-a-markdown-list.md)
 - [ppa13-copy-element-text-to-capture-sequence-of-steps](tasks/ppa13-copy-element-text-to-capture-sequence-of-steps.md)
 - [ppa12-instant-highlighting-of-current-search-query-when-switching-tab-on-the-page](tasks/ppa12-instant-highlighting-of-current-search-query-when-switching-tab-on-the-page.md)

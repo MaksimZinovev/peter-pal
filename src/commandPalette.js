@@ -17,6 +17,13 @@ export function toggleCommandPalette() {
     if (isCommandPaletteVisible) {
       focusSearchInput();
       displayInitialItems();
+    } else {
+      // Remove event listener when hiding the palette
+      const searchInput = document.getElementById("qf-search-input");
+      if (searchInput && isKeyNavigationListenerAdded) {
+        searchInput.removeEventListener("keydown", handleKeyNavigation);
+        isKeyNavigationListenerAdded = false;
+      }
     }
   } else {
     try {
@@ -40,7 +47,7 @@ export function closeCommandPalette() {
 
     const searchInput = document.getElementById("qf-search-input");
     if (searchInput && isKeyNavigationListenerAdded) {
-      searchInput.removeEventstener("keydown", handleKeyNavigation);
+      searchInput.removeEventListener("keydown", handleKeyNavigation);
       isKeyNavigationListenerAdded = false;
     }
   }
@@ -144,7 +151,7 @@ export function displayInitialItems() {
   if (initialItems) {
     // console.log("Initial items:", JSON.stringify(initialItems, null, 2));
     displayResults(initialItems);
-  } else  {
+  } else {
     console.error("displayInitialItems: No items to display");
   }
 }
@@ -186,7 +193,7 @@ function displayResults(results) {
             );
           }
         });
-        - resultsList.appendChild(li);
+        -resultsList.appendChild(li);
       }
     } catch (displayError) {
       console.error("Error displaying search result item:", displayError);
@@ -195,4 +202,4 @@ function displayResults(results) {
   selectFirstResult();
 }
 
-export { scrollToElement, highlightElement, displayResults }
+export { scrollToElement, highlightElement, displayResults };
