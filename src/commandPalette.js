@@ -186,7 +186,7 @@ function displayResults(results) {
             );
           }
         });
-        resultsList.appendChild(li);
+        - resultsList.appendChild(li);
       }
     } catch (displayError) {
       console.error("Error displaying search result item:", displayError);
