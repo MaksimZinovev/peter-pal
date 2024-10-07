@@ -109,7 +109,7 @@ Acceptance Criteria:
 5. Cross-page Compatibility:
 
 User Story 8:
-As a user, I want the Quick Fields extension to work consistently across different websites, so that I can rely on it regardless of the web page structure.
+As a user, I want the Peter Pal extension to work consistently across different websites, so that I can rely on it regardless of the web page structure.
 
 Acceptance Criteria:
 - The extension functions on various website layouts and designs
@@ -119,22 +119,22 @@ Acceptance Criteria:
 6. Performance:
 
 User Story 9:
-As a user, I want the Quick Fields extension to perform searches quickly and efficiently, so that it doesn't slow down my browsing experience.
+As a user, I want the Peter Pal extension to perform searches quickly and efficiently, so that it doesn't slow down my browsing experience.
 
 Acceptance Criteria:
 - The command palette appears within 500ms of activating the hotkey
 - Search results update within 100ms of typing
 - The extension doesn't noticeably impact the loading time or performance of web pages
 
-These user stories cover the main features and requirements of the Quick Fields Chrome browser extension. They can be used as a starting point for development and can be further refined or expanded based on additional stakeholder input or technical considerations.
+These user stories cover the main features and requirements of the Peter Pal Chrome browser extension. They can be used as a starting point for development and can be further refined or expanded based on additional stakeholder input or technical considerations.
 
 
 ## Roadmap 
 
-1. Navigation Improvements:
+1. [done] Navigation Improvements:
    1. Automatically focus on palette input field when palette is triggered
    2. Type query, automatically select first result from the top
-2. Search mode improvements: remove duplicates from search results
+2. [todo] Search mode improvements: remove duplicates from search results
 3. Search mode improvements: trim too long text
 4.  Highlighting improvements: Highlight the row: full-page width area containing the element. Height of the row 70px
 5. UI: add frosted glass palette background

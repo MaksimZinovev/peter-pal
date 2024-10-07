@@ -118,6 +118,6 @@ Action: Attempt to load the extension in Chrome to ensure it's recognized:
 3. Enable "Developer mode" in the top right corner
 4. Click "Load unpacked" and select the project directory
 
-Expected result: The extension should load without errors, and you should see it listed on the extensions page with the name "Quick Fields" and the description you provided.
+Expected result: The extension should load without errors, and you should see it listed on the extensions page with the name "Peter Pal" and the description you provided.
 
 These steps should help verify that the project structure has been set up correctly, all dependencies are installed, and the basic configuration files are in place as per the task requirements.

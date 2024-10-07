@@ -163,7 +163,7 @@ console.log('Content script loaded');
 ```json
 {
   "manifest_version": 2,
-  "name": "Quick Fields",
+  "name": "Peter Pal",
   "version": "1.0",
   "description": "A Chrome extension for quick search and navigation on web pages",
   "permissions": [

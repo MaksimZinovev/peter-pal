@@ -9,7 +9,7 @@ tags: []
 # ppa10 User Story 8 Cross-page Compatibility
 
 User Story 8:
-As a user, I want the Quick Fields extension to work consistently across different websites, so that I can rely on it regardless of the web page structure.
+As a user, I want the Peter Pal extension to work consistently across different websites, so that I can rely on it regardless of the web page structure.
 
 Acceptance Criteria:
 - The extension functions on various website layouts and designs

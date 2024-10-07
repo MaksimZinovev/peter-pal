@@ -24,7 +24,7 @@ Given that the content of the file `000_app_summary.md` provided by user:
 {
 "task_type": "app",
 "app_type": "Chrome browser extension",
-"name": "Quick Fields"
+"name": "Peter Pal"
 }
 ""'
 
@@ -37,7 +37,7 @@ Given that the content of the file provided by user `relative_paths.md` :
 Expected output of the assistant (variables in double brackets were replaced with the content):
 
 """
-You are working on a Chrome browser extension called "Quick Fields" and you need to write code for the entire app based on the tasks that the tech lead gives you. So that you understand better what you're working on, you're given other specs for "Quick Fields" as well.
+You are working on a Chrome browser extension called "Peter Pal" and you need to write code for the entire app based on the tasks that the tech lead gives you. So that you understand better what you're working on, you're given other specs for "Peter Pal" as well.
 
 Remember, I created an empty folder where I will start writing files that you tell me and that are needed for this app.
 

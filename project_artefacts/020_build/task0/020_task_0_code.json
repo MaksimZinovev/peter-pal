@@ -57,7 +57,7 @@
       "type": "save_file",
       "save_file": {
         "path": "./manifest.json",
-        "content": "{\n  \"manifest_version\": 3,\n  \"name\": \"Quick Fields\",\n  \"version\": \"1.0\",\n  \"description\": \"A Chrome extension for Quick Fieldsing on web pages\",\n  \"permissions\": [\n    \"activeTab\",\n    \"storage\"\n  ],\n  \"background\": {\n    \"service_worker\": \"dist/background.bundle.js\"\n  },\n  \"content_scripts\": [\n    {\n      \"matches\": [\"<all_urls>\"],\n      \"js\": [\"dist/content.bundle.js\"]\n    }\n  ],\n  \"commands\": {\n    \"_execute_action\": {\n      \"suggested_key\": {\n        \"default\": \"Ctr+Alt+L\"\n      },\n      \"description\": \"Activate the command palette\"\n    }\n  },\n  \"action\": {\n    \"default_title\": \"Quick Fields\"\n  }\n}",
+        "content": "{\n  \"manifest_version\": 3,\n  \"name\": \"Peter Pal\",\n  \"version\": \"1.0\",\n  \"description\": \"A Chrome extension for Peter Paling on web pages\",\n  \"permissions\": [\n    \"activeTab\",\n    \"storage\"\n  ],\n  \"background\": {\n    \"service_worker\": \"dist/background.bundle.js\"\n  },\n  \"content_scripts\": [\n    {\n      \"matches\": [\"<all_urls>\"],\n      \"js\": [\"dist/content.bundle.js\"]\n    }\n  ],\n  \"commands\": {\n    \"_execute_action\": {\n      \"suggested_key\": {\n        \"default\": \"Ctr+Alt+L\"\n      },\n      \"description\": \"Activate the command palette\"\n    }\n  },\n  \"action\": {\n    \"default_title\": \"Peter Pal\"\n  }\n}",
         "code_change_description": ""
       }
     },
@@ -107,7 +107,7 @@
       "type": "save_file",
       "save_file": {
         "path": "./package.json",
-        "content": "{\n  \"name\": \"quick-fields-extension\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Chrome extension for Quick Fieldsing on web pages\",\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production webpack\",\n    \"build:dev\": \"NODE_ENV=development webpack\",\n    \"watch\": \"NODE_ENV=development webpack --watch\",\n    \"lint\": \"eslint src/**/*.js\"\n  },\n  \"devDependencies\": {\n    \"bootstrap\": \"5.3.0\",\n    \"css-loader\": \"6.8.1\",\n    \"eslint\": \"8.42.0\",\n    \"flexsearch\": \"0.7.31\",\n    \"mousetrap\": \"1.6.5\",\n    \"style-loader\": \"3.3.3\",\n    \"terser-webpack-plugin\": \"5.3.9\",\n    \"webpack\": \"5.85.0\",\n    \"webpack-cli\": \"5.1.1\"\n  }\n}",
+        "content": "{\n  \"name\": \"quick-fields-extension\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Chrome extension for Peter Paling on web pages\",\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production webpack\",\n    \"build:dev\": \"NODE_ENV=development webpack\",\n    \"watch\": \"NODE_ENV=development webpack --watch\",\n    \"lint\": \"eslint src/**/*.js\"\n  },\n  \"devDependencies\": {\n    \"bootstrap\": \"5.3.0\",\n    \"css-loader\": \"6.8.1\",\n    \"eslint\": \"8.42.0\",\n    \"flexsearch\": \"0.7.31\",\n    \"mousetrap\": \"1.6.5\",\n    \"style-loader\": \"3.3.3\",\n    \"terser-webpack-plugin\": \"5.3.9\",\n    \"webpack\": \"5.85.0\",\n    \"webpack-cli\": \"5.1.1\"\n  }\n}",
         "code_change_description": ""
       }
     },

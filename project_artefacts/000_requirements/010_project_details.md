@@ -1,7 +1,7 @@
 
 ## PROJECT DETAILS 
 
-Here is a project description for a Chrome extension for Quick Fieldsing on web pages:
+Here is a project description for a Chrome extension for Peter Paling on web pages:
 
 The project is a powerful Chrome extension command palette that enables effortless, user-friendly, keyboard-focused search on web pages, allowing quick search of elements by text and highlighting them for improved visibility. Command palette is a central element of the extension. The extension aims to streamline navigation and enhance productivity for users interacting with content-heavy web pages.
 

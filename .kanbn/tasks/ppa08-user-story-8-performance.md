@@ -9,7 +9,7 @@ tags: []
 # ppa08 User Story 8 Performance
 
 User Story 8:
-As a user, I want the Quick Fields extension to perform searches quickly and efficiently, so that it doesn't slow down my browsing experience.
+As a user, I want the Peter Pal extension to perform searches quickly and efficiently, so that it doesn't slow down my browsing experience.
 
 Acceptance Criteria:
 - The command palette appears within 500ms of activating the hotkey

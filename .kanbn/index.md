@@ -33,11 +33,12 @@ columnSorting:
 
 ## In Progress
 
-- [ppa15-create-3-unit-test](tasks/ppa15-create-3-unit-test.md)
-- [ppa16-navigation-improvements-focus](tasks/ppa16-navigation-improvements-focus.md)
+- [ppa18-search-improvements-remove-duplicates](tasks/ppa18-search-improvements-remove-duplicates.md)
 
 ## Done
 
+- [ppa16-navigation-improvements-focus](tasks/ppa16-navigation-improvements-focus.md)
+- [ppa15-create-3-unit-test](tasks/ppa15-create-3-unit-test.md)
 - [ppa11-inconsistent-font-family-and-size](tasks/ppa11-inconsistent-font-family-and-size.md)
 - [ppa06-user-story-6-scroll-into-view](tasks/ppa06-user-story-6-scroll-into-view.md)
 - [ppa05-user-story-5-dynamic-highlighting](tasks/ppa05-user-story-5-dynamic-highlighting.md)
