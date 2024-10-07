@@ -1,11 +1,11 @@
 ---
 created: 2024-10-07T10:12:25.098Z
-updated: 2024-10-07T10:16:07.110Z
+updated: 2024-10-07T11:08:43.948Z
 assigned: ""
 progress: 0
 tags:
   - feature
-started: 2024-10-07T10:16:07.110Z
+started: 2024-10-07T00:00:00.000Z
 ---
 
 # ppa18 Search improvements. Remove duplicates

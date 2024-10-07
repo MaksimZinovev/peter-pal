@@ -5,34 +5,32 @@ let searchIndex;
 let items = [];
 const initialResultsCount = 5;
 const DEBUG_MODE = false;
-/* items =  [
-  {
-    "id": 0,
-    "text": "screenpipe",
-    "tagName": "A"
-  },
-  {
-    "id": 1,
-    "text": "screenpipe",
-    "tagName": "A"
-  }
-];  //? 
 
-const removeDuplicates = (arr) => {
-  const uniqueMap = new Map();
-  
-  return arr.filter(obj => {
-    const key = `${obj.text}-${obj.tagName}`;
-    
+function generateSearchIndex(elements) {
+
+const uniqueMap = new Map();
+elements.forEach((el, index) => {
+  let text = el.textContent || el.value || el.placeholder || "";
+  let tagName = el.tagName;
+  if (text.trim()) {
+    const key = `${text.toLowerCase()}-${tagName}`;
     if (!uniqueMap.has(key)) {
-      uniqueMap.set(key, true);
-      return true;
+      try {
+        uniqueMap.set(key, true);
+        searchIndex.add(index, text.trim());
+        items.push({ id: index, text: text.trim(), tagName: tagName });
+        console.log(
+          `Added item ${index} with text: "${text.trim()}", tagName: "${tagName}"`
+        );
+      } catch (addError) {
+        console.error("Error adding element to search index:", addError);
+      }
+    } else {
+      console.log(`Removing duplicate key: ${key}`);
     }
-    
-    return false;
-  });
-}; 
-removeDuplicates(items) //?  */
+  }
+});
+}
 
 export function initializeSearch() {
   try {
@@ -48,24 +46,12 @@ export function initializeSearch() {
       'a, button, input, textarea, select, label, [role="button"]'
     );
     console.log("Total elements found:", elements.length);
-    elements.forEach((el, index) => {
-      let text = el.textContent || el.value || el.placeholder || "";
-      if (text.trim()) {
-        try {
-          searchIndex.add(index, text.trim());
-          items.push({ id: index, text: text.trim() });
-          console.log(`Added item ${index} with text: "${text.trim()}"`);
-        } catch (addError) {
-          console.error("Error adding element to search index:", addError);
-        }
-      }
-    });
+    generateSearchIndex(elements);
     if (DEBUG_MODE) {
       console.table(items);
     }
     // eslint-disable-next-line no-debugger
     // debugger;
-
     console.log("Search index initialized successfully");
   } catch (initError) {
     console.error("Error initializing search index:", initError);
@@ -86,8 +72,6 @@ export function getInitialItems() {
   return Object.keys(searchIndex.register).slice(0, initialResultsCount); // Return first N items
   // return items.slice(0, 3);  // Return first 3 items
 }
-
-
 
 export function performSearch(query) {
   let results = getInitialItems();
@@ -111,5 +95,3 @@ export function performSearch(query) {
     return [];
   }
 }
-
-
