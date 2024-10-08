@@ -41,7 +41,7 @@ export function initializeSearch() {
       minlength: 2,
       encoder: "simple",
     });
-
+ﬁ
     const elements = document.querySelectorAll(
       'a, button, input, textarea, select, label, [role="button"]'
     );
