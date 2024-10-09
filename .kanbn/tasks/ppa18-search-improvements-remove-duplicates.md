@@ -1,6 +1,6 @@
 ---
 created: 2024-10-07T10:12:25.098Z
-updated: 2024-10-07T11:08:43.948Z
+updated: 2024-10-09T11:56:18.237Z
 assigned: ""
 progress: 0
 tags:
@@ -10,7 +10,7 @@ started: 2024-10-07T00:00:00.000Z
 
 # ppa18 Search improvements. Remove duplicates
 
-### User Story 1: Remove Duplicates from Search Results
+### User Story 1 [done]: Remove Duplicates from Search Results
 
 **As a** user of the Peter Pal Chrome extension,  
 **I want** the search results to exclude duplicates,  
@@ -26,7 +26,7 @@ started: 2024-10-07T00:00:00.000Z
 2. Verify that the search results do not contain any duplicate entries based on the combination of tag and text.
 3. Ensure that the performance of the search operation is not negatively impacted.
 
-### User Story 2: Remove Single Character Results
+### User Story 2 [done]: Remove Single Character Results
 
 **As a** user of the Peter Pal Chrome extension,  
 **I want** the search results to exclude single character results (e.g., "@"),  

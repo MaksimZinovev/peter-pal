@@ -18,6 +18,8 @@ columnSorting:
 
 ## Backlog
 
+- [ppa20-change-style-of-search-result-on-mouse-hover](tasks/ppa20-change-style-of-search-result-on-mouse-hover.md)
+- [ppa19-search-improvement-explude-from-search-results-invisible-documents](tasks/ppa19-search-improvement-explude-from-search-results-invisible-documents.md)
 - [ppa17-switching-theme-should-be-only-available-when-palette-is-visible](tasks/ppa17-switching-theme-should-be-only-available-when-palette-is-visible.md)
 - [ppa14-capture-text-of-an-area-and-format-as-a-markdown-list](tasks/ppa14-capture-text-of-an-area-and-format-as-a-markdown-list.md)
 - [ppa13-copy-element-text-to-capture-sequence-of-steps](tasks/ppa13-copy-element-text-to-capture-sequence-of-steps.md)

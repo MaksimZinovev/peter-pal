@@ -7,29 +7,30 @@ const initialResultsCount = 5;
 const DEBUG_MODE = false;
 
 function generateSearchIndex(elements) {
-
-const uniqueMap = new Map();
-elements.forEach((el, index) => {
-  let text = el.textContent || el.value || el.placeholder || "";
-  let tagName = el.tagName;
-  if (text.trim()) {
-    const key = `${text.toLowerCase()}-${tagName}`;
-    if (!uniqueMap.has(key)) {
-      try {
-        uniqueMap.set(key, true);
-        searchIndex.add(index, text.trim());
-        items.push({ id: index, text: text.trim(), tagName: tagName });
-        console.log(
-          `Added item ${index} with text: "${text.trim()}", tagName: "${tagName}"`
-        );
-      } catch (addError) {
-        console.error("Error adding element to search index:", addError);
+  const uniqueMap = new Map();
+  elements.forEach((el, index) => {
+    let text = el.textContent || el.value || el.placeholder || "";
+    let tagName = el.tagName;
+    if (text.trim().length > 1) {
+      const key = `${text.toLowerCase()}-${tagName}`;
+      if (!uniqueMap.has(key)) {
+        try {
+          uniqueMap.set(key, true);
+          searchIndex.add(index, text.trim());
+          items.push({ id: index, text: text.trim(), tagName: tagName });
+          console.log(
+            `Added item ${index} with text: "${text.trim()}", tagName: "${tagName}"`
+          );
+        } catch (addError) {
+          console.error("Error adding element to search index:", addError);
+        }
+      } else {
+        console.log(`Removing duplicate key: ${key}`);  
       }
     } else {
-      console.log(`Removing duplicate key: ${key}`);
+      console.log(`Removing text less than 1 char: ${text.trim()}`);
     }
-  }
-});
+  });
 }
 
 export function initializeSearch() {
@@ -41,7 +42,7 @@ export function initializeSearch() {
       minlength: 2,
       encoder: "simple",
     });
-ﬁ
+
     const elements = document.querySelectorAll(
       'a, button, input, textarea, select, label, [role="button"]'
     );

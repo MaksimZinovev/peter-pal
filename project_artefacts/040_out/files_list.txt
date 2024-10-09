@@ -1,0 +1,45 @@
+.
+├── LICENSE
+├── dist
+│   ├── background.bundle.js
+│   ├── content.bundle.css
+│   ├── content.bundle.js
+│   ├── theme-dark.bundle.css
+│   ├── theme-dark.js
+│   ├── theme-light.bundle.css
+│   └── theme-light.js
+├── img
+│   ├── logo.png
+│   ├── logo.svg
+│   ├── palette-dark.png
+│   ├── palette-light.png
+│   └── youtube-thumbnail.png
+├── jsconfig.json
+├── knowledge
+│   ├── README-flexsearch.md
+│   └── store.md
+├── manifest.json
+├── out.md
+├── package-lock.json
+├── package.json
+├── readme.md
+├── src
+│   ├── background.js
+│   ├── commandPalette.js
+│   ├── content.js
+│   ├── searchManager.js
+│   ├── styles.css
+│   ├── theme-dark.css
+│   ├── theme-light.css
+│   ├── themeManager.js
+│   ├── uiComponents.js
+│   └── utils.js
+├── test
+│   ├── setup.js
+│   ├── themeManager.test.js
+│   └── utils.test.js
+├── vitest.config.js
+├── webpack.config.js
+└── webpack.theme.config.js
+
+5 directories, 37 files
