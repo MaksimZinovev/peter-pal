@@ -18,6 +18,7 @@ columnSorting:
 
 ## Backlog
 
+- [ppa21-search-text-from-palette-input-should-not-be-added-to-search-index](tasks/ppa21-search-text-from-palette-input-should-not-be-added-to-search-index.md)
 - [ppa20-change-style-of-search-result-on-mouse-hover](tasks/ppa20-change-style-of-search-result-on-mouse-hover.md)
 - [ppa19-search-improvement-explude-from-search-results-invisible-documents](tasks/ppa19-search-improvement-explude-from-search-results-invisible-documents.md)
 - [ppa17-switching-theme-should-be-only-available-when-palette-is-visible](tasks/ppa17-switching-theme-should-be-only-available-when-palette-is-visible.md)
@@ -35,10 +36,9 @@ columnSorting:
 
 ## In Progress
 
-- [ppa18-search-improvements-remove-duplicates](tasks/ppa18-search-improvements-remove-duplicates.md)
-
 ## Done
 
+- [ppa18-search-improvements-remove-duplicates](tasks/ppa18-search-improvements-remove-duplicates.md)
 - [ppa16-navigation-improvements-focus](tasks/ppa16-navigation-improvements-focus.md)
 - [ppa15-create-3-unit-test](tasks/ppa15-create-3-unit-test.md)
 - [ppa11-inconsistent-font-family-and-size](tasks/ppa11-inconsistent-font-family-and-size.md)

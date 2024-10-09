@@ -1,16 +1,19 @@
 import { Index } from "flexsearch";
 import { displayResults } from "./commandPalette.js";
+import { sanitizeText } from "./utils.js";
 
 let searchIndex;
 let items = [];
 const initialResultsCount = 5;
 const DEBUG_MODE = false;
 
+
 function generateSearchIndex(elements) {
   const uniqueMap = new Map();
   elements.forEach((el, index) => {
     let text = el.textContent || el.value || el.placeholder || "";
     let tagName = el.tagName;
+    text = sanitizeText(text);
     if (text.trim().length > 1) {
       const key = `${text.toLowerCase()}-${tagName}`;
       if (!uniqueMap.has(key)) {

@@ -210,7 +210,7 @@ The implementation meets all the requirements specified in the task description.
 
 2. Performance optimization: For very large pages, we might want to consider indexing elements in batches or on-demand to improve initial load time.
 
-3. Relevance scoring: We could potentially make use of Flexsearch's scoring capabilities to improve result ordering.
+3. Relevance scoring: Wekan could potentially make use of Flexsearch's scoring capabilities to improve result ordering.
 
 4. Accessibility: We should ensure that the command palette and search results are fully accessible, including keyboard navigation through results.
 
