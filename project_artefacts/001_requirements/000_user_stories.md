@@ -134,24 +134,24 @@ These user stories cover the main features and requirements of the Peter Pal Chr
 1. [done] Navigation Improvements:
    1. Automatically focus on palette input field when palette is triggered
    2. Type query, automatically select first result from the top
-2. [todo] Search mode improvements: remove duplicates from search results
-3. Search mode improvements: trim too long text
-4.  Highlighting improvements: Highlight the row: full-page width area containing the element. Height of the row 70px
-5. UI: add frosted glass palette background
-6. Search mode improvements: do not display elements with text like `​​&ZeroWidthSpace​`
+2. [done] Search mode improvements: remove duplicates from search results
+3. [done] Search mode improvements: do not display elements with text like `​​&ZeroWidthSpace​`
+4. Highlighting improvements: Highlight the row: full-page width area containing the element. Height of the row 70px
+5. Search mode improvements: trim too long text
+6. UI: add frosted glass palette background
 7. Search mode improvements: filter specific kind of elements, e.g. all childs of `nav`
 8. Search mode improvements: allow to see all search results in palette and scroll using mouse, page down. page up
 9. Search mode improvements: classic. Search all text displayed on page
 10. Use accessibility tree instead of tags to search elements on the page 
 11. Add commit linter 
 12. Rewrite in the future to use shadcn components
-13. Serch mode improvements: Do not display in results elements with no text
+13. [done] Search mode improvements: Do not display in results elements with no text
 14. Serch mode improvements: display in fuzzy-search suggestions prefix - the tag of the element
-15. Navigation Improvements:
+15. [done] Navigation Improvements:
    1. Automtically focus on palette input field when palette is triggered
    2. Type query, automatically select first result from the top
-   3. Press "Shft+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
-   4. Press "Ctrl+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
+   3. Press "Ctr+Enter". Automatically scroll into element view. Do not close palette. Automatically select next search result up. 
+
 
 
 
