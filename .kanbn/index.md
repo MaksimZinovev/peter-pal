@@ -36,6 +36,8 @@ columnSorting:
 
 ## In Progress
 
+- [ppa22-highlight-the-row-full-page-width-area-containing-the-element-selected-in-search-result-height-of-the-row-70px](tasks/ppa22-highlight-the-row-full-page-width-area-containing-the-element-selected-in-search-result-height-of-the-row-70px.md)
+
 ## Done
 
 - [ppa18-search-improvements-remove-duplicates](tasks/ppa18-search-improvements-remove-duplicates.md)
