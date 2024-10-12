@@ -1,10 +1,11 @@
 ---
 created: 2024-10-12T02:37:21.649Z
-updated: 2024-10-12T03:01:54.486Z
+updated: 2024-10-12T07:13:51.926Z
 assigned: ""
 progress: 0
 tags:
   - bug
+completed: 2024-10-12T07:13:51.927Z
 ---
 
 # ppa23 Incorrect search results displayed when user tyeps query
