@@ -152,12 +152,12 @@ function selectFirstResult() {
 
 export function displayInitialItems() {
   const { results, items } = getInitialItems();
-  console.log("displayInitialItems()");
+/*   console.log("displayInitialItems()");
   console.log(
     "displayInitialItemsgetInitialItems():",
     JSON.stringify(getInitialItems(), null, 2)
   );
-  console.log("results:", JSON.stringify(results, null, 2));
+  console.log("results:", JSON.stringify(results, null, 2)); */
 
   if (results && items) {
     // console.log("Initial items:", JSON.stringify(initialItems, null, 2));
@@ -187,20 +187,20 @@ function displayResults(searchResults, items) {
     const getItemById = (elementId) =>
       items.find((item) => item.id === parseInt(elementId));
     // display items using search results
-    console.log("Display results");
+/*     console.log("Display results");
     console.log("searchResults:", JSON.stringify(items, null, 2));
-    console.log("Items:", JSON.stringify(items, null, 2));
+    console.log("Items:", JSON.stringify(items, null, 2)); */
     searchResults.forEach((elementId) => {
       try {
-        console.log(`elementId: ${elementId}`);
         const li = document.createElement("li");
         const item = getItemById(elementId);
+        console.log(`elementId: ${elementId}, trext: ${item.text}`);
         if (!item) {
           console.error(`Item with id ${elementId} not found in items array`);
           return;
         }
 
-        console.log("Item to display:", JSON.stringify(item, null, 2));
+        // console.log("Item to display:", JSON.stringify(item, null, 2));
         const el = document.querySelector(`[data-qf-id="${elementId}"]`);
         if (el && items) {
           // get element using data-qf-id attribute
@@ -228,4 +228,4 @@ function displayResults(searchResults, items) {
     selectFirstResult();
   }
 }
-export { scrollToElement, highlightElement, displayResults };
+export { scrollToElement,  displayResults };

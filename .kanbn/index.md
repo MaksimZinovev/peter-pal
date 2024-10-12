@@ -18,6 +18,7 @@ columnSorting:
 
 ## Backlog
 
+- [ppa26-change-position-of-comannd-palette-to-avoid-overlapping-with-highlight](tasks/ppa26-change-position-of-comannd-palette-to-avoid-overlapping-with-highlight.md)
 - [ppa24-display-page-map](tasks/ppa24-display-page-map.md)
 - [ppa21-search-text-from-palette-input-should-not-be-added-to-search-index](tasks/ppa21-search-text-from-palette-input-should-not-be-added-to-search-index.md)
 - [ppa20-change-style-of-search-result-on-mouse-hover](tasks/ppa20-change-style-of-search-result-on-mouse-hover.md)

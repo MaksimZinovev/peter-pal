@@ -13,31 +13,34 @@ let isCommandPaletteVisible = false;
 const currentTheme = getCurrentTheme();
 let lastHighlightedElement = null;
 
-let highlightRect = null;
+let highlightRect = [];
 
 function highlightElementRect(element) {
   if (element) {
     const rect = element.getBoundingClientRect();
-    highlightRect = document.createElement("div");
-    highlightRect.style.position = "absolute";
-    highlightRect.style.top = `${rect.top}px`;
-    highlightRect.style.left = "0px";
-    highlightRect.style.width = "100%";
-    highlightRect.style.height = "70px";
-    highlightRect.style.background = "rgba(255, 255, 255, 0.5)";
-    highlightRect.style.zIndex = "1000";
-    document.body.appendChild(highlightRect);
+    //store highlightrect 
+
+    highlightRect.push(document.createElement("div"));
+    //get last elementin array
+    const lastHighlight = highlightRect[highlightRect.length - 1];
+    lastHighlight.style.position = "absolute";
+    lastHighlight.style.top = `${rect.top}px`;
+    lastHighlight.style.left = "0px";
+    lastHighlight.style.width = "100%";
+    lastHighlight.style.height = "70px";
+    lastHighlight.style.background = "rgba(255, 255, 255, 0.5)";
+    lastHighlight.style.zIndex = "1000";
+    document.body.appendChild(lastHighlight);
 
     setTimeout(() => { 
-      removeHighlightRect();
+      removeHighlightRect(lastHighlight);
     }, 4000);
   }
 }
 
-export function removeHighlightRect () {
-  if (highlightRect && highlightRect.parentNode == document.body)
-    document.body.removeChild(highlightRect);
-  highlightRect = null;
+export function removeHighlightRect (el) {
+  if (el && el.parentNode == document.body)
+    document.body.removeChild(el);
   }
   
 
@@ -50,6 +53,7 @@ try {
   initializeSearch();
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isCommandPaletteVisible) {
+       console.log("Pressed Escape button ");
       closeCommandPalette();
       isCommandPaletteVisible = false;
       if (lastHighlightedElement) {
@@ -58,6 +62,7 @@ try {
         }, 4000);
       }
     } else if (e.key === "Enter" && isCommandPaletteVisible) {
+       console.log("Pressed Enter button ");
       e.preventDefault();
       const selectedItem = document.querySelector(".qf-selected");
       if (selectedItem) {
@@ -72,6 +77,7 @@ try {
         highlightElementRect(element);
         lastHighlightedElement = element;
         if (!e.ctrlKey) {
+          console.log("Pressed Ctrl button ");
           closeCommandPalette();
           isCommandPaletteVisible = false;
         }
