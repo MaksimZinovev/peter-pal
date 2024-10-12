@@ -1,5 +1,6 @@
 import { commandPaletteHTML } from "./uiComponents.js";
 import { initializeSearch, getInitialItems } from "./searchManager.js";
+import { removeHighlightRect } from "./content";
 
 let isCommandPaletteVisible = false;
 let isKeyNavigationListenerAdded = false;
@@ -50,6 +51,7 @@ export function closeCommandPalette() {
       searchInput.removeEventListener("keydown", handleKeyNavigation);
       isKeyNavigationListenerAdded = false;
     }
+    removeHighlightRect();
   }
 }
 
@@ -82,19 +84,25 @@ function handleKeyNavigation(event) {
     currentSelectedIndex =
       (currentSelectedIndex - 1 + items.length) % items.length;
     updateSelectedItem(items);
-  } else if (event.key === "Enter") {
+  }
+  /*   else if (event.key === "Enter") {
     event.preventDefault();
     const selectedItem = items[currentSelectedIndex];
     if (selectedItem) {
       const elementId = selectedItem.dataset.elementId;
       const element = document.querySelector(`[data-qf-id="${elementId}"]`);
       scrollToElement(element);
-      highlightElement(element);
+      // highlightElement(element);
+      if (highlightRect) {
+        document.body.removeChild(highlightRect);
+        highlightRect = null;
+      }
+      highlightElementRect(element);
       if (!event.ctrlKey) {
         closeCommandPalette();
       }
     }
-  }
+  } */
 }
 
 function updateSelectedItem(items) {
@@ -120,14 +128,14 @@ function scrollToElement(element) {
   }
 }
 
-function highlightElement(element) {
+/* function highlightElementOutline(element) {
   if (element) {
     element.classList.add("qf-highlighted");
     setTimeout(() => {
       element.classList.remove("qf-highlighted");
     }, 4000);
   }
-}
+} */
 
 function selectFirstResult() {
   const resultsList = document.getElementById("qf-results-list");
