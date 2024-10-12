@@ -34,6 +34,8 @@ columnSorting:
 
 ## Todo
 
+- [ppa23-incorrect-search-results-displayed-when-user-tyeps-query](tasks/ppa23-incorrect-search-results-displayed-when-user-tyeps-query.md)
+
 ## In Progress
 
 - [ppa22-highlight-the-row-full-page-width-area-containing-the-element-selected-in-search-result-height-of-the-row-70px](tasks/ppa22-highlight-the-row-full-page-width-area-containing-the-element-selected-in-search-result-height-of-the-row-70px.md)
