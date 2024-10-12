@@ -143,20 +143,23 @@ function selectFirstResult() {
 }
 
 export function displayInitialItems() {
-  // if (!searchIndex) {
-  //   console.error("Search index not initialized");
-  //   return;
-  // }
-  const initialItems = getInitialItems();
-  if (initialItems) {
+  const { results, items } = getInitialItems();
+  console.log("displayInitialItems()");
+  console.log(
+    "displayInitialItemsgetInitialItems():",
+    JSON.stringify(getInitialItems(), null, 2)
+  );
+  console.log("results:", JSON.stringify(results, null, 2));
+
+  if (results && items) {
     // console.log("Initial items:", JSON.stringify(initialItems, null, 2));
-    displayResults(initialItems);
+    displayResults(results, items);
   } else {
-    console.error("displayInitialItems: No items to display");
+    console.log("displayInitialItems: No items to display");
   }
 }
 
-function displayResults(results) {
+function displayResults(searchResults, items) {
   const resultsList = document.getElementById("qf-results-list");
   if (!resultsList) {
     console.error("Results list element not found");
@@ -164,42 +167,57 @@ function displayResults(results) {
   }
 
   resultsList.innerHTML = "";
-
-  if (results.length === 0) {
-    resultsList.innerHTML = "<li>No elements found</li>";
-    resetSelectedIndex();
-    return;
-  }
-
-  results.forEach((id) => {
-    try {
-      const li = document.createElement("li");
-      const el = document.querySelectorAll(
-        'a, button, input, textarea, select, label, [role="button"]'
-      )[id];
-      if (el) {
-        li.textContent = el.textContent || el.value || el.placeholder || "";
-        li.dataset.elementId = id;
-        el.dataset.qfId = id;
-        li.addEventListener("click", () => {
-          try {
-            el.focus();
-            el.click();
-            closeCommandPalette();
-          } catch (clickError) {
-            console.error(
-              "Error interacting with search result element:",
-              clickError
-            );
-          }
-        });
-        -resultsList.appendChild(li);
-      }
-    } catch (displayError) {
-      console.error("Error displaying search result item:", displayError);
+  if (searchResults) {
+    if (searchResults.length === 0) {
+      resultsList.innerHTML = "<li>No elements found</li>";
+      resetSelectedIndex();
+      return;
     }
-  });
-  selectFirstResult();
-}
 
+    // convert elementId string to Int
+
+    const getItemById = (elementId) =>
+      items.find((item) => item.id === parseInt(elementId));
+    // display items using search results
+    console.log("Display results");
+    console.log("searchResults:", JSON.stringify(items, null, 2));
+    console.log("Items:", JSON.stringify(items, null, 2));
+    searchResults.forEach((elementId) => {
+      try {
+        console.log(`elementId: ${elementId}`);
+        const li = document.createElement("li");
+        const item = getItemById(elementId);
+        if (!item) {
+          console.error(`Item with id ${elementId} not found in items array`);
+          return;
+        }
+
+        console.log("Item to display:", JSON.stringify(item, null, 2));
+        const el = document.querySelector(`[data-qf-id="${elementId}"]`);
+        if (el && items) {
+          // get element using data-qf-id attribute
+          // console.log("Item to display:", JSON.stringify(item, null, 2));
+          li.textContent = item["text"] || "no text";
+          li.dataset.elementId = elementId;
+          li.addEventListener("click", () => {
+            try {
+              el.focus();
+              el.click();
+              closeCommandPalette();
+            } catch (clickError) {
+              console.error(
+                "Error interacting with search result element:",
+                clickError
+              );
+            }
+          });
+          resultsList.appendChild(li);
+        }
+      } catch (displayError) {
+        console.error("Error displaying search result item:", displayError);
+      }
+    });
+    selectFirstResult();
+  }
+}
 export { scrollToElement, highlightElement, displayResults };
