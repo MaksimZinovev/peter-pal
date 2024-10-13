@@ -1,13 +1,15 @@
 ---
 created: 2024-10-12T10:45:17.303Z
-updated: 2024-10-12T10:45:17.298Z
+updated: 2024-10-13T13:19:29.788Z
 assigned: ""
 progress: 0
 tags:
   - feature
+completed: 2024-10-13T13:19:29.788Z
 ---
 
 # ppa26 Change position of comannd palette to avoid overlapping with highlight 
+
 ppa26-change-position-of-comannd-palette
 Help me to implement logic
 
@@ -19,21 +21,28 @@ Help me to implement logic
 6. [todo] Move command palette to the right or left side (depending on the position of element) so that element is not overlapping with the palette.
 
 ### Qwen 72B 
-  ```
+
+```
  To implement the logic for moving the command palette to the right or left side depending on the position of the element, you can follow these steps:
 
 ### Step 1: Calculate the Position of the Element
+
 You need to determine the position of the element relative to the viewport. This can be done using the `getBoundingClientRect` method.
 
 ### Step 2: Determine the Position of the Command Palette
+
 You need to decide whether to position the command palette on the left or right side based on the element's position. If the element is closer to the left side of the viewport, position the palette on the right, and vice versa.
 
 ### Step 3: Update the Command Palette's Position
+
 Update the command palette's position by adjusting its `left` and `right` CSS properties.
 
 ### Implementation
 
+
+
 #### 1. Add a Function to Calculate Element Position
+
 In `commandPalette.js`, add a function to calculate the position of the element relative to the viewport.
 
 ```javascript
@@ -55,6 +64,7 @@ function getElementPosition(element) {
 ```
 
 #### 2. Update `handleKeyNavigation` Function
+
 In the `handleKeyNavigation` function, add logic to move the command palette when the user presses `Enter + Ctrl`.
 
 ```javascript
@@ -89,6 +99,7 @@ function handleKeyNavigation(event) {
 ```
 
 #### 3. Add `moveCommandPalette` Function
+
 In `commandPalette.js`, add a function to move the command palette based on the element's position.
 
 ```javascript
@@ -112,6 +123,7 @@ function moveCommandPalette(element) {
 ```
 
 ### Update Styles
+
 Ensure that the command palette has the necessary styles to be positioned correctly. You can add the following styles to `styles.css`:
 
 ```css
@@ -132,13 +144,10 @@ Ensure that the command palette has the necessary styles to be positioned correc
 ```
 
 ### Summary
+
 1. **Calculate the element's position** using `getBoundingClientRect`.
 2. **Determine the position of the command palette** based on the element's position.
 3. **Update the command palette's position** by adjusting its `left` and `right` CSS properties.
 4. **Add the necessary styles** to ensure the command palette can be positioned correctly.
 
-This should ensure that the command palette moves to the appropriate side to avoid overlapping with the highlighted element. ``` 
-
- 
-
-  
+This should ensure that the command palette moves to the appropriate side to avoid overlapping with the highlighted element. ```

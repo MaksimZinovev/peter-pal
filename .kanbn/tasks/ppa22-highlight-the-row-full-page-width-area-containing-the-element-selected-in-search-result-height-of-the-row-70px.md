@@ -1,11 +1,12 @@
 ---
 created: 2024-10-10T11:56:23.777Z
-updated: 2024-10-10T12:07:53.436Z
+updated: 2024-10-13T13:24:58.906Z
 assigned: ""
-progress: 0
+progress: 1
 tags:
   - feature
-started: 2024-10-10T12:07:53.436Z
+started: 2024-10-10T00:00:00.000Z
+completed: 2024-10-14T00:00:00.000Z
 ---
 
 # ppa22 Highlight the row. Full-page width area containing the element selected in search result. Height of the row 70px
