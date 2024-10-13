@@ -1,41 +1,20 @@
-Total elements found: 42
-searchManager.js:25 Added item 0 with text: "Skip to content", tagName: "A"
-searchManager.js:35 Removing text less than 1 char: 
-searchManager.js:25 Added item 2 with text: "Examples", tagName: "A"
-searchManager.js:25 Added item 3 with text: "Docs", tagName: "A"
-3searchManager.js:35 Removing text less than 1 char: 
-searchManager.js:25 Added item 7 with text: "Get Started", tagName: "A"
-searchManager.js:32 Removing duplicate key: examples-A
-searchManager.js:25 Added item 9 with text: "Enter your email", tagName: "INPUT"
-searchManager.js:25 Added item 10 with text: "GitHub Stars", tagName: "A"
-searchManager.js:25 Added item 11 with text: "Monthly Npm Downloads", tagName: "A"
-searchManager.js:25 Added item 12 with text: "Monthly JSDelivr Requests", tagName: "A"
-searchManager.js:25 Added item 13 with text: "Discover the class-less version", tagName: "A"
-searchManager.js:32 Removing duplicate key: get started-A
-searchManager.js:25 Added item 15 with text: "Discover the responsive font sizes", tagName: "A"
-searchManager.js:25 Added item 16 with text: "Learn about the color schemes", tagName: "A"
-searchManager.js:25 Added item 17 with text: "Learn about the CSS variables", tagName: "A"
-searchManager.js:25 Added item 18 with text: "Quick start", tagName: "A"
-searchManager.js:25 Added item 19 with text: "What’s new?", tagName: "A"
-searchManager.js:25 Added item 20 with text: "Brand", tagName: "A"
-searchManager.js:25 Added item 21 with text: "Mission", tagName: "A"
-searchManager.js:25 Added item 22 with text: "Usage scenarios", tagName: "A"
-searchManager.js:32 Removing duplicate key: quick start-A
-searchManager.js:25 Added item 24 with text: "Version picker", tagName: "A"
-searchManager.js:25 Added item 25 with text: "Class-less version", tagName: "A"
-searchManager.js:25 Added item 26 with text: "Form elements", tagName: "A"
-searchManager.js:25 Added item 27 with text: "Issues", tagName: "A"
-searchManager.js:25 Added item 28 with text: "Discussions", tagName: "A"
-searchManager.js:25 Added item 29 with text: "Help", tagName: "A"
-searchManager.js:25 Added item 30 with text: "HTML", tagName: "A"
-searchManager.js:25 Added item 31 with text: "Class-less", tagName: "A"
-searchManager.js:25 Added item 32 with text: "React", tagName: "A"
-searchManager.js:25 Added item 33 with text: "All", tagName: "A"
-searchManager.js:25 Added item 34 with text: "Lucas Larroche", tagName: "A"
-searchManager.js:25 Added item 35 with text: "contributors", tagName: "A"
-4searchManager.js:35 Removing text less than 1 char: 
-searchManager.js:25 Added item 40 with text: "MIT", tagName: "A"
-searchManager.js:25 Added item 41 with text: "CC BY-SA 4.0", tagName: "A"
-searchManager.js:62 Search index initialized successfully
-themeManager.js:44 Initialize currentTheme: dark
-themeManager.js:18 Theme CSS loaded: chrome-extension://docjdfbapkbhhcchcoldlndapcgpfbma/dist/theme-dark.bundle.css
+````css .qf-command-palette { font-family: 'Segoe UI', 'Roboto', sans-serif; font-size: 18px; } .qf-command-palette { position: fixed; top: 0; left: 0; /* This should be a value, not a transition / width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.35); display: flex; justify-content: center; align-items: flex-start; padding-top: 10vh; z-index: 9999; transition: left 0.3s ease-in-out; / Add this line */ }
+
+.qf-command-palette-container { width: 90%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 6px rgba(100, 100, 100, 0.3); overflow: hidden; display: flex; flex-direction: column; }
+
+.qf-search-input { width: 100%; padding: 16px; font-size: 18px; border: none; outline: none; background-color: rgba(66, 66, 66, 0.94); transition: border-color 0.3s ease; font-family: inherit; /* This will inherit from the.qf-command-palette */ }
+
+.qf-search-input:focus { border-color: #c0c0c0; border: 5px; outline: 5px; }
+
+.qf-help-text { padding: 8px 16px; font-size: 14px; font-family: inherit; }
+
+.qf-results-container { flex-grow: 1; overflow-y: auto; max-height: 300px; }
+
+.qf-results-list { list-style-type: none; margin: 0; padding: 0; }
+
+.qf-results-list li { padding: 12px 16px; cursor: pointer; transition: background-color 0.2s; font-family: inherit; font-size: 18px; }
+
+.qf-footer { padding: 8px 16px; font-size: 14px; border-top: 1px solid; text-align: left; background-color: rgba(41, 40, 40, 0.94); font-family: inherit; } /* Default light theme with 80% opacity */ .qf-results-list li.qf-selected { background-color: rgba(100, 100, 100, 0.94); }
+
+.qf-highlighted { outline: 3px solid #007bff; transition: outline 0.3s ease-in-out; }```
+````

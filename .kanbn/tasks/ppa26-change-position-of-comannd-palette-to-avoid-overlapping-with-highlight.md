@@ -7,8 +7,8 @@ tags:
   - feature
 ---
 
-# ppa26 Change position of comannd palette to avoid overlapping with highlight
-
+# ppa26 Change position of comannd palette to avoid overlapping with highlight 
+ppa26-change-position-of-comannd-palette
 Help me to implement logic
 
 1. [implemented] Command palette is opened and search results are displayed
@@ -137,7 +137,7 @@ Ensure that the command palette has the necessary styles to be positioned correc
 3. **Update the command palette's position** by adjusting its `left` and `right` CSS properties.
 4. **Add the necessary styles** to ensure the command palette can be positioned correctly.
 
-This should ensure that the command palette moves to the appropriate side to avoid overlapping with the highlighted element. ```
+This should ensure that the command palette moves to the appropriate side to avoid overlapping with the highlighted element. ``` 
 
  
 

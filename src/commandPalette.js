@@ -1,6 +1,6 @@
 import { commandPaletteHTML } from "./uiComponents.js";
 import { initializeSearch, getInitialItems } from "./searchManager.js";
-import { removeHighlightRect } from "./content";
+import { removeHighlightRect, centerPalette } from "./content";
 
 let isCommandPaletteVisible = false;
 let isKeyNavigationListenerAdded = false;
@@ -12,10 +12,13 @@ export function toggleCommandPalette() {
   const existingPalette = document.getElementById(
     "quick-fields-command-palette"
   );
+
+
   if (existingPalette) {
     isCommandPaletteVisible = !isCommandPaletteVisible;
     existingPalette.style.display = isCommandPaletteVisible ? "flex" : "none";
     if (isCommandPaletteVisible) {
+      centerPalette(document.querySelector(".qf-command-palette-container"));
       focusSearchInput();
       displayInitialItems();
     } else {
@@ -30,6 +33,7 @@ export function toggleCommandPalette() {
     try {
       document.body.insertAdjacentHTML("beforeend", commandPaletteHTML);
       isCommandPaletteVisible = true;
+      centerPalette(document.querySelector(".qf-command-palette-container"));
       initializeSearch();
       displayInitialItems();
       focusSearchInput();
@@ -85,24 +89,6 @@ function handleKeyNavigation(event) {
       (currentSelectedIndex - 1 + items.length) % items.length;
     updateSelectedItem(items);
   }
-  /*   else if (event.key === "Enter") {
-    event.preventDefault();
-    const selectedItem = items[currentSelectedIndex];
-    if (selectedItem) {
-      const elementId = selectedItem.dataset.elementId;
-      const element = document.querySelector(`[data-qf-id="${elementId}"]`);
-      scrollToElement(element);
-      // highlightElement(element);
-      if (highlightRect) {
-        document.body.removeChild(highlightRect);
-        highlightRect = null;
-      }
-      highlightElementRect(element);
-      if (!event.ctrlKey) {
-        closeCommandPalette();
-      }
-    }
-  } */
 }
 
 function updateSelectedItem(items) {
@@ -127,15 +113,6 @@ function scrollToElement(element) {
     element.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 }
-
-/* function highlightElementOutline(element) {
-  if (element) {
-    element.classList.add("qf-highlighted");
-    setTimeout(() => {
-      element.classList.remove("qf-highlighted");
-    }, 4000);
-  }
-} */
 
 function selectFirstResult() {
   const resultsList = document.getElementById("qf-results-list");
