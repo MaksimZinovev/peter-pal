@@ -8,7 +8,10 @@ tags:
 started: 2024-10-13T13:24:40.549Z
 ---
 
-# ppa27 highlightElementRect sometimes does not work Replication steps:
+# ppa27 highlightElementRect sometimes does not work 
+
+ppa27-highlight-element-rect-sometimes-does-not-work
+## Replication steps:
 
 1. Open https://picocss.com/ site
 2. Open Peter Pla command palette
