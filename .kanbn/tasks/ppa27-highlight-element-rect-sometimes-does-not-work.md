@@ -27,4 +27,9 @@ ppa27-highlight-element-rect-sometimes-does-not-work
 12. Observe that rectangle highlighting is not present  - highlightElementRect function.
 13. press Ctr+Enter on  "Examples" item in command palette search result again. 
 14. Observe Element outline is highlighted  - function highlightElementOutline. 
-15. Observe that rectangle highlighting is not present  - 
+15. Observe that rectangle highlighting is now present  - displayed by highlightElementRect function.
+
+
+Expected result
+
+both highlights should always work: highlightElementRect and highlightElementOutline

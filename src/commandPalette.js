@@ -1,6 +1,6 @@
 import { commandPaletteHTML } from "./uiComponents.js";
 import { initializeSearch, getInitialItems } from "./searchManager.js";
-import { removeHighlightRect, centerPalette } from "./content";
+import { removeHighlight, centerPalette } from "./content";
 
 let isCommandPaletteVisible = false;
 let isKeyNavigationListenerAdded = false;
@@ -55,7 +55,7 @@ export function closeCommandPalette() {
       searchInput.removeEventListener("keydown", handleKeyNavigation);
       isKeyNavigationListenerAdded = false;
     }
-    removeHighlightRect();
+    removeHighlight();
   }
 }
 

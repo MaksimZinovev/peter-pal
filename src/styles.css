@@ -85,7 +85,27 @@
   background-color: rgba(100, 100, 100, 0.94);
 }
 
-.qf-highlighted {
-  outline: 3px solid #007bff;
-  transition: outline 0.3s ease-in-out;
+.qf-highlighted-rect {
+  position: relative;
+  z-index: 9999;
+}
+
+.qf-highlighted-rect::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250vw;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+
+.qf-highlighted-outline {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  position: relative;
+  z-index: 10000;
 }

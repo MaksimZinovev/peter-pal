@@ -1,5 +1,5 @@
-```js
 // content.js
+// Oct 14 9:55 AM
 import { initializeTheme, toggleTheme } from "./themeManager.js";
 import {
   toggleCommandPalette,
@@ -12,28 +12,27 @@ import { getCurrentTheme } from "./themeManager.js";
 
 let isCommandPaletteVisible = false;
 const currentTheme = getCurrentTheme();
-/*  // Store highlight for each element in array to ensure each highlight element is removed eventually after timeout or when new highlight of the same type is added  */
-let highlightStack = [];
-let highlightTimeout;
+let activeHighlight = null;
+let activeTimeout;
 
 function highlightElement(element, type) {
   if (element) {
-    // Remove previous highlight if the same highlight type already stored
-    removeHighlight(type);
-    // Add new highlight to stack
+    removeHighlight();
+
     element.classList.add("qf-highlighted");
     element.classList.add(`qf-highlighted-${type}`);
-    // Add highligh to stack
+    activeHighlight = { element, type };
 
     if (type === "rect") {
       adjustCommandPalettePosition(element);
     }
 
-    // Set timeout for removing highlight after 3 seconds and store in stack element, type and timeout so that it can be cleared when new highlight is added 
-    highlightTimeout = setTimeout(() => {
-      removeHighlight(type);
+    if (activeTimeout && activeHighlight.type === type) {
+      clearTimeout(activeTimeout);
+    }
+    activeTimeout = setTimeout(() => {
+      removeHighlight();
     }, 4000);
-    highlightStack.push({ element, type, highlightTimeout });
   }
 }
 
@@ -45,15 +44,18 @@ function highlightElementRect(element) {
   highlightElement(element, "rect");
 }
 
-// Remove previous highlight if the same highlight type already stored. Use arrow function
-export function removeHighlight(type) {
-  const elementToRemove = highlightStack.find((item) => item.type === type);
-  if (elementToRemove) {
-    clearTimeout(elementToRemove.highlightTimeout);
-    elementToRemove.element.classList.remove("qf-highlighted");
-    elementToRemove.element.classList.remove(`qf-highlighted-${type}`);
-    // Remove from stack
-    highlightStack = highlightStack.filter((item) => item !== elementToRemove);
+export function removeHighlight() {
+  if (activeHighlight) {
+    activeHighlight.element.classList.remove("qf-highlighted");
+    activeHighlight.element.classList.remove(
+      `qf-highlighted-${activeHighlight.type}`
+    );
+    activeHighlight = null;
+
+    if (activeTimeout) {
+      clearTimeout(activeTimeout);
+      activeTimeout = null;
+    }
   }
 }
 
@@ -68,7 +70,7 @@ try {
       console.log("Pressed Escape button ");
       closeCommandPalette();
       isCommandPaletteVisible = false;
-      if (highlightStack) {
+      if (activeHighlight) {
         removeHighlight();
       }
     } else if (e.key === "Enter" && isCommandPaletteVisible) {
@@ -155,8 +157,7 @@ function adjustCommandPalettePosition(element) {
     const centerLeft = (windowWidth - paletteRect.width) / 2;
     const centerRight = centerLeft + paletteRect.width;
     const wouldOverlapInCenter =
-      elementRect.left - 100 < centerRight &&
-      elementRect.right + 100 > centerLeft;
+      (elementRect.left - 100) < centerRight && (elementRect.right + 100)  > centerLeft;
 
     if (wouldOverlapInCenter) {
       // There would be an overlap if centered, so adjust the palette position
@@ -179,5 +180,3 @@ function adjustCommandPalettePosition(element) {
     }
   }
 }
-
-```

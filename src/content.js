@@ -1,4 +1,3 @@
-// content.js
 import { initializeTheme, toggleTheme } from "./themeManager.js";
 import {
   toggleCommandPalette,
@@ -11,48 +10,55 @@ import { getCurrentTheme } from "./themeManager.js";
 
 let isCommandPaletteVisible = false;
 const currentTheme = getCurrentTheme();
-let lastHighlightedElement = null;
+let activeHighlight = null;
+let activeTimeout;
 
-let highlightRect = [];
+function highlightElement(element, type) {
+  if (element) {
+    removeHighlight();
+
+    element.classList.add("qf-highlighted");
+    element.classList.add(`qf-highlighted-${type}`);
+    
+    if (activeTimeout) {
+      clearTimeout(activeTimeout);
+    }
+
+    if (type === "rect") {
+      adjustCommandPalettePosition(element);
+      activeHighlight = { element, type };
+      activeTimeout = setTimeout(() => {
+        removeHighlight();
+      }, 4000);
+    } else
+      setTimeout(() => {
+        activeHighlight.element.classList.remove("qf-highlighted");
+        activeHighlight.element.classList.remove(`qf-highlighted-outline`);
+      }, 4000);
+  }
+}
 
 function highlightElementOutline(element) {
-  if (element) {
-    element.classList.add("qf-highlighted");
-    setTimeout(() => {
-      element.classList.remove("qf-highlighted");
-    }, 4000);
-  }
+  highlightElement(element, "outline");
 }
 
 function highlightElementRect(element) {
-  if (element) {
-    const rect = element.getBoundingClientRect();
-    //store highlightrect
-
-    highlightRect.push(document.createElement("div"));
-    //get last elementin array
-    const lastHighlight = highlightRect[highlightRect.length - 1];
-    lastHighlight.style.position = "absolute";
-    lastHighlight.style.top = `${rect.top}px`;
-    lastHighlight.style.left = "0px";
-    lastHighlight.style.width = "100%";
-    lastHighlight.style.height = "70px";
-    lastHighlight.style.background = "rgba(255, 255, 255, 0.5)";
-    lastHighlight.style.zIndex = "1000";
-    lastHighlight.classList.add("highlighted");
-    document.body.appendChild(lastHighlight);
-    console.log("Highlighting element");
-
-    adjustCommandPalettePosition(element);
-
-    setTimeout(() => {
-      removeHighlightRect(lastHighlight);
-    }, 6000);
-  }
+  highlightElement(element, "rect");
 }
 
-export function removeHighlightRect(el) {
-  if (el && el.parentNode == document.body) document.body.removeChild(el);
+export function removeHighlight() {
+  if (activeHighlight) {
+    activeHighlight.element.classList.remove("qf-highlighted");
+    activeHighlight.element.classList.remove(
+      `qf-highlighted-${activeHighlight.type}`
+    );
+    activeHighlight = null;
+
+    if (activeTimeout) {
+      clearTimeout(activeTimeout);
+      activeTimeout = null;
+    }
+  }
 }
 
 try {
@@ -66,29 +72,27 @@ try {
       console.log("Pressed Escape button ");
       closeCommandPalette();
       isCommandPaletteVisible = false;
-      if (lastHighlightedElement) {
-        setTimeout(() => {
-          lastHighlightedElement.classList.remove("qf-highlighted");
-        }, 4000);
+      if (activeHighlight) {
+        removeHighlight();
       }
     } else if (e.key === "Enter" && isCommandPaletteVisible) {
       console.log("Pressed Enter button ");
-      e.preventDefault();
       const selectedItem = document.querySelector(".qf-selected");
       if (selectedItem) {
         const elementId = selectedItem.dataset.elementId;
         const element = document.querySelector(`[data-qf-id="${elementId}"]`);
 
-        if (lastHighlightedElement) {
-          lastHighlightedElement.classList.remove("qf-highlighted");
+        if (activeHighlight) {
+          removeHighlight();
         }
-        scrollToElement(element);
-        highlightElementRect(element);
-        highlightElementOutline(element);
-        lastHighlightedElement = element;
+        if (element) {
+          scrollToElement(element);
+          highlightElementOutline(element);
+          highlightElementRect(element);
 
-        // Adjust the palette position for the newly selected element
-        adjustCommandPalettePosition(element);
+          // Adjust the palette position for the newly selected element
+          // adjustCommandPalettePosition(element);
+        }
 
         if (!e.ctrlKey) {
           console.log("Pressed Ctrl button ");
@@ -155,7 +159,7 @@ function adjustCommandPalettePosition(element) {
     const centerLeft = (windowWidth - paletteRect.width) / 2;
     const centerRight = centerLeft + paletteRect.width;
     const wouldOverlapInCenter =
-      elementRect.left < centerRight && elementRect.right > centerLeft;
+      (elementRect.left - 100) < centerRight && (elementRect.right + 100)  > centerLeft;
 
     if (wouldOverlapInCenter) {
       // There would be an overlap if centered, so adjust the palette position
