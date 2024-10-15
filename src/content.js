@@ -165,12 +165,15 @@ function adjustCommandPalettePosition(element) {
       // There would be an overlap if centered, so adjust the palette position
       if (elementRect.left < windowWidth / 2) {
         // Element is closer to the left side, move palette to the right
-        paletteContainer.style.right = "10px";
+        paletteContainer.style.right = "100px";
         paletteContainer.style.left = "auto";
         paletteContainer.style.transform = "none";
       } else {
         // Element is closer to the right side, move palette to the left
-        paletteContainer.style.left = "10px";
+        // 10% left gap between palette edge and window edge
+        
+        // paletteContainer.style.left = "60px";
+        paletteContainer.style.left = "100px";
         paletteContainer.style.right = "auto";
         paletteContainer.style.transform = "none";
       }
