@@ -170,9 +170,7 @@ function adjustCommandPalettePosition(element) {
         paletteContainer.style.transform = "none";
       } else {
         // Element is closer to the right side, move palette to the left
-        // 10% left gap between palette edge and window edge
         
-        // paletteContainer.style.left = "60px";
         paletteContainer.style.left = "100px";
         paletteContainer.style.right = "auto";
         paletteContainer.style.transform = "none";
