@@ -1,16 +1,18 @@
 ---
 created: 2024-10-13T13:23:37.648Z
-updated: 2024-10-13T13:24:40.549Z
+updated: 2024-10-15T12:01:03.456Z
 assigned: ""
 progress: 0
 tags:
   - bug
 started: 2024-10-13T13:24:40.549Z
+completed: 2024-10-15T12:01:03.457Z
 ---
 
 # ppa27 highlightElementRect sometimes does not work 
 
 ppa27-highlight-element-rect-sometimes-does-not-work
+
 ## Replication steps:
 
 1. Open https://picocss.com/ site

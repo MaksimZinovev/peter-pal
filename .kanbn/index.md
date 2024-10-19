@@ -37,10 +37,11 @@ columnSorting:
 
 ## In Progress
 
-- [ppa27-highlight-element-rect-sometimes-does-not-work](tasks/ppa27-highlight-element-rect-sometimes-does-not-work.md)
+- [ppa28-change-styling-of-palette-to-resemble-shadcn](tasks/ppa28-change-styling-of-palette-to-resemble-shadcn.md)
 
 ## Done
 
+- [ppa27-highlight-element-rect-sometimes-does-not-work](tasks/ppa27-highlight-element-rect-sometimes-does-not-work.md)
 - [ppa26-change-position-of-comannd-palette-to-avoid-overlapping-with-highlight](tasks/ppa26-change-position-of-comannd-palette-to-avoid-overlapping-with-highlight.md)
 - [ppa23-incorrect-search-results-displayed-when-user-tyeps-query](tasks/ppa23-incorrect-search-results-displayed-when-user-tyeps-query.md)
 - [ppa22-highlight-the-row-full-page-width-area-containing-the-element-selected-in-search-result-height-of-the-row-70px](tasks/ppa22-highlight-the-row-full-page-width-area-containing-the-element-selected-in-search-result-height-of-the-row-70px.md)
