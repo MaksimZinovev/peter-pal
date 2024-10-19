@@ -8,14 +8,6 @@ body {
     --tw-ring-offset-color:  hsl(var(--background)); 
 } 
 
-* { 
-    box-sizing: border-box; 
-
-} 
-
-* { 
-    border-color: hsl(var(--border));
-} 
 
 * { 
     --tw-translate-x: 0; 
