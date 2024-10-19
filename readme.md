@@ -142,8 +142,8 @@ We welcome contributions to Peter Pal! If you'd like to contribute, please:
 3. Make your changes
 4. Submit a pull request with a clear description of your changes
 
-For more information on contributing, please see our contribution guidelines (link to be added).
-
+For more information on contributing, please see our contribution guidelines (link to be added). 
+ 
 <h2>📄 License</h2>
 
 This project is licensed under the Apache-2.0 license. See the LICENSE file for details.
@@ -153,3 +153,8 @@ This project is licensed under the Apache-2.0 license. See the LICENSE file for 
 <a href="https://github.com/MaksimZinovev"><img src="https://avatars.githubusercontent.com/u/53397443?v=4" title="Maksim Zinovev" width="50" height="50"></a>
 <br /><br />
 <a href="https://x.com/maxfaber_Om">![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/maxfaber_Om)</a>
+
+<h2> Inspiration and Interesting links</h2>
+
+- https://htmlcsscleaner.com
+- https://www.htmlwasher.com
