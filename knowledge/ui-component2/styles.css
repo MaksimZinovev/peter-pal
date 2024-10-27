@@ -280,7 +280,7 @@ button {
  */
 .qf-group-heading {
   /* Color: A muted foreground color to differentiate from regular text */
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   /* Font Weight: Slightly bolder to signif y a heading, but not overly bold */
   font-weight: 500;
   /* Line Height: To ensure the heading text doesn't become too dense */
@@ -368,11 +368,11 @@ button {
   width: 1.5rem;
 }
 .h-3 {
-  height: 0.75rem;
+  height: 1rem;
 }
 
 .w-3 {
-  width: 0.75rem;
+  width: 1rem;
 }
 
 .mr-2 {
@@ -401,4 +401,7 @@ button {
 
 .opacity-50 {
   opacity: 0.5;
+}
+.align-middle {
+  vertical-align: middle;
 }
