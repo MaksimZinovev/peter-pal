@@ -1,6 +1,23 @@
 Read the attached files and help me to clean up css.
 Let's remove unused css one class at a time. Stop after reviewing each block and ask for my feedback.
-Guide me. Explain why specific css block can be remomoved. 
+Guide me. Explain why specific css block can be removed. 
 Start from the top. One block at time.
 we do not need transitions and animation effects, all styles related to transitions and animation effects can be removed. 
 We should keep hover effects.
+
+
+## Simplify 
+
+I have HTML file for command palette and styles.css.
+
+Help me simplify the HTML, CSS  structure, class names and make them less complex.
+
+
+
+Let's review 
+
+Let's review one HTML block  at a time. Stop after reviewing each block and ask for my feedback.
+
+Guide me. Explain why specific  block can be changed and suggest code change.
+
+The goal is to keep the component visually the same, preserve styling but simplify css, html, make them shorter and less complex, more readable.

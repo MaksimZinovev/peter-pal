@@ -1,0 +1,343 @@
+:root {
+  --background: 0 0% 100%;
+  /* Review if this aligns with your light theme's background */
+  --foreground: 240 10% 3.9%;
+  /* Aligns with your provided foreground, but ensure it fits your overall design */
+  /*... other variables... */
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  /* --muted-foreground: 113, 113, 122; */
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --border: 240 5.9% 90%;
+  --radius: 0.5rem;
+  --base-font-size: 14px; /* New variable for base font size */
+  --font-size-small: calc(var(--base-font-size) * 0.85);
+  --font-size-large: calc(var(--base-font-size) * 1.15);
+}
+
+
+.qf-command-palette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10vh;
+  z-index: 9999;
+  scroll-behavior: smooth;
+  /* max-width: 32rem; */
+  width: 100%;
+  gap: 4rem;
+  border-width: 1px;
+  background-color: hsl(var(--background));
+  box-shadow: 0 2px 4px hsl(var(--border) / 1.5), 0 4px 8px hsl(var(--border) / 3);
+  overflow: hidden;
+}
+
+.qf-command-palette-container {
+  position: absolute;
+  left: 50vw;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 600px;
+  transition: left 0.2s ease-in-out, right 0.5s ease-in-out;
+  ;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(100, 100, 100, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.qf-search-input {
+  width: 100%;
+  padding: 16px;
+  font-size: var(--base-font-size);
+  border: none;
+  outline: none;
+  background-color: rgba(66, 66, 66, 0.94);
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  /* This will inherit from the .qf-command-palette */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.qf-search-input:focus {
+  border-color: #c0c0c0;
+  border: 5px;
+  outline: 5px;
+}
+
+.qf-help-text {
+  padding: 8px 16px;
+  font-size: var(--base-font-size);
+  font-family: inherit;
+}
+
+.qf-results-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.qf-results-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.qf-results-list li {
+  /* padding: 12px 16px; */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--base-font-size);
+}
+
+.qf-footer {
+  padding: 8px 16px;
+  font-size: var(--base-font-size);
+  border-top: 1px solid;
+  text-align: left;
+  background-color: rgba(41, 40, 40, 0.94);
+  font-family: inherit;
+}
+
+/* Default light theme with 80% opacity  */
+.qf-results-list li.qf-selected {
+  background-color: rgba(100, 100, 100, 0.94);
+}
+
+.qf-highlighted-rect {
+  position: relative;
+  z-index: 9999;
+}
+
+.qf-highlighted-rect::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250vw;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+
+.qf-highlighted-outline {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  position: relative;
+  z-index: 10000;
+}
+
+/* Updated styling  */
+
+body {
+  line-height: 1.5;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans, 'Segoe UI'), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  font-size:  var(--base-font-size);
+}
+
+
+svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  /* margin-right: 0.5rem; */
+  display: block;
+}
+
+.command-input::placeholder {
+  color: var(--muted-foreground);
+  font-size:  var(--base-font-size);
+}
+
+.command-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.px-3 {
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+
+
+.right-4 {
+  right: 1rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+
+.opacity-70 {
+  opacity: .7;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.rounded-sm {
+  border-radius: calc(var(--radius) - 4px);
+}
+
+.ring-offset-background {
+  --tw-ring-offset-color: hsl(var(--background));
+}
+
+/**
+ * Styles for the group headings in the command palette.
+ */
+.qf-group-heading {
+  /* Color: A muted foreground color to differentiate from regular text */
+  color: hsl(var(--muted-foreground));
+  /* Font Weight: Slightly bolder to signify a heading, but not overly bold */
+  font-weight: 500;
+  /* Line Height: To ensure the heading text doesn't become too dense */
+  line-height: 1rem;
+  /* Font Size: Smaller than list items to create visual hierarchy (adjust based on your design) */
+  font-size: 0.75rem;
+
+
+  /* Adds a small margin at the bottom to separate the heading from the list items */
+  margin-bottom: 0.5rem;
+
+  /* Padding: Adjusted to maintain a balanced look; inherits from parent for top/bottom, explicitly set for right/left */
+  padding-top: inherit;
+  /* Inherited from parent to maintain spacing consistency */
+  padding-bottom: 0.375rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  /* Existing styles remain... */
+
+  /* Prevent Heading Selection */
+  user-select: none;
+  /* Standard property */
+  -moz-user-select: none;
+  /* For Mozilla browsers */
+  -webkit-user-select: none;
+  /* For WebKit browsers */
+  -ms-user-select: none;
+  /* For IE and Edge */
+
+  pointer-events: none;
+  /* Additionally, prevent pointer events (clicks, hovers) on the heading */
+}
+
+
+/**
+ * Styles for the sublist container (contains the list items under a group heading).
+ */
+.qf-sublist {
+  /* Removes the default list styling (e.g., bullet points, padding) */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * Styles for individual list items within the sublist.
+ */
+.qf-results-list-item {
+  /* Inherit the font family from the parent element to maintain consistency */
+  font-family: inherit;
+  /* Sets the font size to fit well within the sublist; adjust as needed */
+  font-size: 0.875rem;
+  line-height: 1.25rem;;
+}
+
+
+/**
+ * Optional: Styles applied when a list item is hovered over.
+ */
+.qf-results-list-item:hover {
+  /* Changes the background color to a light gray on hover; adjust or remove as per your design */
+  background-color: rgba(100, 100, 100, 0.1);
+}
+
+.qf-results-list-item.qf-selected {
+  /* Changes the background color to a darker gray to indicate selection; adjust as per your design */
+  background-color: rgba(100, 100, 100, 0.94);
+}
+
+.qf-group-wrapper {
+  padding-top: 0px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: hsl(var(--foreground));
+  padding-bottom: 0.25rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.h-4 { 
+  height: 1.5rem;
+} 
+
+.w-4 { 
+  width: 1.5rem;
+} 
+.h-3 { 
+  height: 0.75rem;
+} 
+
+.w-3 { 
+  width: 0.75rem;
+} 
+
+.mr-2 { 
+  margin-right: 0.5rem;
+} 
+.qf-list-item-icon {
+  display: block
+  
+  /* 
+  margin-right: 0.5rem; adds some space between icon and text */
+}
+
+.justify-center {
+  justify-content: center;
+}
+
