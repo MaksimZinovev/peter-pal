@@ -18,6 +18,7 @@ columnSorting:
 
 ## Backlog
 
+- [roadmap](tasks/roadmap.md)
 - [ppa24-display-page-map](tasks/ppa24-display-page-map.md)
 - [ppa21-search-text-from-palette-input-should-not-be-added-to-search-index](tasks/ppa21-search-text-from-palette-input-should-not-be-added-to-search-index.md)
 - [ppa20-change-style-of-search-result-on-mouse-hover](tasks/ppa20-change-style-of-search-result-on-mouse-hover.md)
@@ -37,10 +38,11 @@ columnSorting:
 
 ## In Progress
 
-- [ppa28-change-styling-of-palette-to-resemble-shadcn](tasks/ppa28-change-styling-of-palette-to-resemble-shadcn.md)
+- [ppa29-integrate-new-ui-component-into-extension](tasks/ppa29-integrate-new-ui-component-into-extension.md)
 
 ## Done
 
+- [ppa28-create-new-ui-component-with-modern-styling](tasks/ppa28-create-new-ui-component-with-modern-styling.md)
 - [ppa27-highlight-element-rect-sometimes-does-not-work](tasks/ppa27-highlight-element-rect-sometimes-does-not-work.md)
 - [ppa26-change-position-of-comannd-palette-to-avoid-overlapping-with-highlight](tasks/ppa26-change-position-of-comannd-palette-to-avoid-overlapping-with-highlight.md)
 - [ppa23-incorrect-search-results-displayed-when-user-tyeps-query](tasks/ppa23-incorrect-search-results-displayed-when-user-tyeps-query.md)
