@@ -10,7 +10,7 @@ export function toggleCommandPalette() {
   // const currentTheme = getCurrentTheme();
   // console.log(`currentTheme: ${currentTheme}`);
   const existingPalette = document.getElementById(
-    "peterpal-command-palette"
+    "quick-fields-command-palette"
   );
 
 
@@ -18,12 +18,12 @@ export function toggleCommandPalette() {
     isCommandPaletteVisible = !isCommandPaletteVisible;
     existingPalette.style.display = isCommandPaletteVisible ? "flex" : "none";
     if (isCommandPaletteVisible) {
-      centerPalette(document.querySelector(".peterpal-command-palette-container"));
+      centerPalette(existingPalette.querySelector(".qf-command-palette-container"));
       focusSearchInput();
       displayInitialItems();
     } else {
       // Remove event listener when hiding the palette
-      const searchInput = document.getElementById("peterpal-search-input");
+      const searchInput = document.getElementById("qf-search-input");
       if (searchInput && isKeyNavigationListenerAdded) {
         searchInput.removeEventListener("keydown", handleKeyNavigation);
         isKeyNavigationListenerAdded = false;
@@ -33,7 +33,7 @@ export function toggleCommandPalette() {
     try {
       document.body.insertAdjacentHTML("beforeend", commandPaletteHTML);
       isCommandPaletteVisible = true;
-      centerPalette(document.querySelector(".peterpal-command-palette-container"));
+      centerPalette(document.querySelector(".qf-command-palette-container"));
       initializeSearch();
       displayInitialItems();
       focusSearchInput();
@@ -45,12 +45,12 @@ export function toggleCommandPalette() {
 }
 
 export function closeCommandPalette() {
-  const palette = document.getElementById("peterpal-command-palette");
+  const palette = document.getElementById("quick-fields-command-palette");
   if (palette) {
     palette.style.display = "none";
     isCommandPaletteVisible = false;
 
-    const searchInput = document.getElementById("peterpal-search-input");
+    const searchInput = document.getElementById("qf-search-input");
     if (searchInput && isKeyNavigationListenerAdded) {
       searchInput.removeEventListener("keydown", handleKeyNavigation);
       isKeyNavigationListenerAdded = false;
@@ -60,7 +60,7 @@ export function closeCommandPalette() {
 }
 
 function focusSearchInput() {
-  const searchInput = document.getElementById("peterpal-search-input");
+  const searchInput = document.getElementById("qf-search-input");
   if (searchInput) {
     searchInput.focus();
     if (!isKeyNavigationListenerAdded) {
@@ -76,7 +76,7 @@ function focusSearchInput() {
 }
 
 function handleKeyNavigation(event) {
-  const resultsList = document.getElementById("peterpal-results-list ");
+  const resultsList = document.getElementById("qf-results-list");
   const items = resultsList.getElementsByTagName("li");
 
   if (event.key === "ArrowDown") {
@@ -115,7 +115,7 @@ function scrollToElement(element) {
 }
 
 function selectFirstResult() {
-  const resultsList = document.getElementById("peterpal-results-list ");
+  const resultsList = document.getElementById("qf-results-list");
   if (resultsList) {
     const items = Array.from(resultsList.getElementsByTagName("li"));
     if (items.length > 0) {
@@ -145,7 +145,7 @@ export function displayInitialItems() {
 }
 
 function displayResults(searchResults, items) {
-  const resultsList = document.getElementById("peterpal-results-list ");
+  const resultsList = document.getElementById("qf-results-list");
   if (!resultsList) {
     console.error("Results list element not found");
     return;

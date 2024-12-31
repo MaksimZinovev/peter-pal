@@ -17,8 +17,8 @@ function highlightElement(element, type) {
   if (element) {
     removeHighlight();
 
-    element.classList.add("peterpal-highlighted");
-    element.classList.add(`peterpal-highlighted-${type}`);
+    element.classList.add("qf-highlighted");
+    element.classList.add(`qf-highlighted-${type}`);
     
     if (activeTimeout) {
       clearTimeout(activeTimeout);
@@ -33,8 +33,8 @@ function highlightElement(element, type) {
       }, 4000);
     } else
       setTimeout(() => {
-        activeHighlight.element.classList.remove("peterpal-highlighted");
-        activeHighlight.element.classList.remove(`peterpal-highlighted-outline`);
+        activeHighlight.element.classList.remove("qf-highlighted");
+        activeHighlight.element.classList.remove(`qf-highlighted-outline`);
       }, 4000);
   }
 }
@@ -50,9 +50,9 @@ function highlightElementRect(element) {
 
 export function removeHighlight() {
   if (activeHighlight) {
-    activeHighlight.element.classList.remove("peterpal-highlighted");
+    activeHighlight.element.classList.remove("qf-highlighted");
     activeHighlight.element.classList.remove(
-      `peterpal-highlighted-${activeHighlight.type}`
+      `qf-highlighted-${activeHighlight.type}`
     );
     activeHighlight = null;
 
@@ -109,7 +109,7 @@ try {
     if (request.action === "toggleCommandPalette") {
       isCommandPaletteVisible = toggleCommandPalette();
       if (isCommandPaletteVisible) {
-        const searchInput = document.getElementById("peterpal-search-input");
+        const searchInput = document.getElementById("qf-search-input");
         if (searchInput) {
           searchInput.focus();
         }
@@ -126,7 +126,7 @@ try {
   document.addEventListener(
     "input",
     debounce((e) => {
-      if (e.target.id === "peterpal-search-input") {
+      if (e.target.id === "qf-search-input") {
         performSearch(e.target.value);
       }
     }, 50)
@@ -142,7 +142,7 @@ export function centerPalette(paletteContainer) {
 
 function adjustCommandPalettePosition(element) {
   const paletteContainer = document.querySelector(
-    ".peterpal-command-palette-container"
+    ".qf-command-palette-container"
   );
   const windowWidth = window.innerWidth;
 

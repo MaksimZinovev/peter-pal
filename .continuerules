@@ -1,0 +1,124 @@
+## Comments
+
+In your code, include meaningful comments which help junior engineers to read and understand your code.
+
+- explain complex parts of the code using simple language and concepts
+- do not in include too many comments explaining trivial t
+
+ <example>
+ ```js
+// Check if centering would cause an overlap
+    const centerLeft = (windowWidth - paletteRect.width) / 2;
+    const centerRight = centerLeft + paletteRect.width;
+    const wouldOverlapInCenter =
+      (elementRect.left - 100) < centerRight && (elementRect.right + 100)  > centerLeft;
+
+    if (wouldOverlapInCenter) {
+      // There would be an overlap if centered, so adjust the palette position
+      if (elementRect.left < windowWidth / 2) {
+        // Element is closer to the left side, move palette to the right
+        paletteContainer.style.right = "100px";
+        paletteContainer.style.left = "auto";
+        paletteContainer.style.transform = "none";
+      } else {
+        // Element is closer to the right side, move palette to the left
+
+        paletteContainer.style.left = "100px";
+        paletteContainer.style.right = "auto";
+        paletteContainer.style.transform = "none";
+      }
+    }
+      ```
+      </example>
+
+## Order of execution
+
+All the steps will be executed in order in which you give them, so it is very important that you think about all steps before you start listing them. For example, you should never code something before you install dependencies or you should never try access a file before it exists in project.
+
+## File naming
+
+**IMPORTANT**: When creating and naming new files, ensure the file naming (camelCase, kebab-case, underscore_case, etc) is consistent with the best practices and coding style of the language.
+
+## File size limit
+
+**IMPORTANT**
+When you think about in which file should the new code go to, always try to make files as small as possible and put code in more smaller files rather than in one big file.
+
+## Relative paths
+
+**IMPORTANT**: Pay attention to file paths: if the command or argument is a file or folder from the project, use paths relative to the project root (for example, use `./somefile` instead of `/somefile`).
+
+## Ask questions proactively
+
+For complex tasks ask user between 1 and 3 questions that could help you to complete your task in a best possible way by gathering more information about context, avoiding confusion or miscommunication. You should use that information in your reasoning.
+
+## Chat responces for complex tasks, questions
+
+Here is example of complex task:
+
+- "Review this code, make sure all variables functions are defined"
+- "Please read and suggest changes to handle emove a global keydown event listener"
+
+Here is example of simple question: "How to export function in JavaScript"
+
+In your communication with user follow the below rules.
+
+1. Start from a short paragraph containing the main idea(s).
+
+ <example>
+ After reviewing the code in commandPalette.js, searchManager.js, and content.js, I've noticed a few issues that need to be addressed to ensure proper integration. Let's go through them:
+ </example>
+
+2. In the next sections, be specific, explain details as concise as possible, mention relevant key files or parts of the code.
+
+<example>
+```js
+In commandPalette.js, the handleSearch function is not properly integrated with searchManager.js. The performSearch and items are not imported or defined. Let's fix this:
+```
+</example>
+
+3. Include relevant code snippets explaining details. Important: You need to write code for the entire sub-task or task based on your plan and steps that you suggested. Give user all the code that should be changed and specific steps to implement changes.
+
+Make sure to include comments such as
+
+- name of the file
+- relevant notes
+- do not include large pieces of the code that is not changed
+
+<example>
+
+```js
+// commandPalette.js
+import { performSearch } from "./searchManager.js";
+
+// ... existing code ...
+
+function handleSearch(event) {
+  const query = event.target.value;
+  performSearch(query);
+  // Note: We don't need to call displayResults here as it's called inside performSearch
+}
+```
+
+</example>
+
+4. When you offer several options or solutions, give a recommendation for the best option and explain your reasoning.
+
+5. The final part of response should be concise summary and list of key points.
+
+<example>
+
+These changes should resolve the integration issues between commandPalette.js, searchManager.js, and content.js. The search functionality should now work properly, with the correct flow of data between the modules.
+To summarize the changes:
+
+We removed the circular dependency between commandPalette.js and searchManager.js.
+
+1. We updated the performSearch function in searchManager.js to return both results and items.
+2. We modified the event listener in content.js to handle the new return value from performSearch.
+3. We ensured that displayResults is properly exported from commandPalette.js.
+
+These modifications should improve the overall structure and integration of the search functionality across the different modules.
+
+</example>
+
+## Chat responces for simple tasks, questions

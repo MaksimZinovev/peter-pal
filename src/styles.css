@@ -1,8 +1,8 @@
-.qf-command-palette {
+.peterpal-command-palette {
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   font-size: 18px;
 }
-.qf-command-palette {
+.peterpal-command-palette {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
   z-index: 9999;
 }
 
-.qf-command-palette-container {
+.peterpal-command-palette-container {
   position: absolute;
   left: 50vw;
   transform: translateX(-50%);
@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-.qf-search-input {
+.peterpal-search-input {
   width: 100%;
   padding: 16px;
   font-size: 18px;
@@ -38,34 +38,34 @@
   outline: none;
   background-color: rgba(66, 66, 66, 0.94);
   transition: border-color 0.3s ease;
-  font-family: inherit; /* This will inherit from the .qf-command-palette */
+  font-family: inherit; /* This will inherit from the .peterpal-command-palette */
 }
 
-.qf-search-input:focus {
+.peterpal-search-input:focus {
   border-color: #c0c0c0;
   border: 5px;
   outline: 5px;
 }
 
-.qf-help-text {
+.peterpal-help-text {
   padding: 8px 16px;
   font-size: 14px;
   font-family: inherit;
 }
 
-.qf-results-container {
+.peterpal-results-container {
   flex-grow: 1;
   overflow-y: auto;
   max-height: 300px;
 }
 
-.qf-results-list {
+.peterpal-results-list  {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.qf-results-list li {
+.peterpal-results-list  li {
   padding: 12px 16px;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -73,7 +73,7 @@
   font-size: 18px;
 }
 
-.qf-footer {
+.peterpal-footer {
   padding: 8px 16px;
   font-size: 14px;
   border-top: 1px solid;
@@ -81,16 +81,16 @@
   background-color: rgba(41, 40, 40, 0.94);
   font-family: inherit;
 }  /* Default light theme with 80% opacity  */
-.qf-results-list li.qf-selected {
+.peterpal-results-list  li.qf-selected {
   background-color: rgba(100, 100, 100, 0.94);
 }
 
-.qf-highlighted-rect {
+.peterpal-highlighted-rect {
   position: relative;
   z-index: 9999;
 }
 
-.qf-highlighted-rect::before {
+.peterpal-highlighted-rect::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -103,7 +103,7 @@
 }
 
 
-.qf-highlighted-outline {
+.peterpal-highlighted-outline  {
   outline: 2px solid #007bff;
   outline-offset: 2px;
   position: relative;

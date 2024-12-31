@@ -1,16 +1,16 @@
 // uiComponents.js
 export const commandPaletteHTML = `
-  <div id="quick-fields-command-palette" class="qf-command-palette">
-    <div class="qf-command-palette-container">
-      <div class="qf-search-wrapper">
-        <input type="text" id="qf-search-input" class="qf-search-input" placeholder="Search ..">
+  <div id="peterpal-command-palette" class="peterpal-command-palette">
+    <div class="peterpal-command-palette-container">
+      <div class="peterpal-search-wrapper">
+        <input type="text" id="peterpal-search-input" class="peterpal-search-input" placeholder="Search ..">
       </div>
-      <div class="qf-results-container">
+      <div class="peterpal-results-container">
         <div id="qf-recently-used" class="qf-recently-used">
         </div>
-        <ul id="qf-results-list" class="qf-results-list"></ul>
+        <ul id="peterpal-results-list " class="peterpal-results-list "></ul>
       </div>
-      <div class="qf-footer">
+      <div class="peterpal-footer">
         Type to search, use ↑↓ to navigate, Enter to select, Alt+Shift+T to toggle theme
       </div>
     </div>
