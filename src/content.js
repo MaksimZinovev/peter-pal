@@ -50,9 +50,9 @@ function highlightElementRect(element) {
 
 export function removeHighlight() {
   if (activeHighlight) {
-    activeHighlight.element.classList.remove("qf-highlighted");
+    activeHighlight.element.classList.remove("peterpal-highlighted");
     activeHighlight.element.classList.remove(
-      `qf-highlighted-${activeHighlight.type}`
+      `peterpal-highlighted-${activeHighlight.type}`
     );
     activeHighlight = null;
 
