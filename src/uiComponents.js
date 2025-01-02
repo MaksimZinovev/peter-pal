@@ -7,7 +7,7 @@ export const commandPaletteHTML = `
       </div>
       <div class="peterpal-results-container">
         <div id="peterpal-recently-used" class="peterpal-recently-used">
-        </div>`
+        </div>
         <ul id="peterpal-results-list" class="peterpal-results-list"></ul>
       </div>
       <div class="peterpal-footer">
