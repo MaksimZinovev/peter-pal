@@ -81,7 +81,7 @@
   background-color: rgba(41, 40, 40, 0.94);
   font-family: inherit;
 }  /* Default light theme with 80% opacity  */
-.peterpal-results-list  li.qf-selected {
+.peterpal-results-list  li.peterpal-selected {
   background-color: rgba(100, 100, 100, 0.94);
 }
 

@@ -27,7 +27,7 @@ body.qf-light-theme .peterpal-results-list  li {
 }
 body.qf-light-theme .peterpal-results-list  li:hover,
 body.qf-light-theme .peterpal-results-list  li:focus,
-body.qf-light-theme .peterpal-results-list  li.qf-selected {
+body.qf-light-theme .peterpal-results-list  li.peterpal-selected {
   background-color: rgba(232, 232, 232, 0.94); /* More opaque on hover/focus */
 }
 

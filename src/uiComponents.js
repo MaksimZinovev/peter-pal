@@ -6,9 +6,9 @@ export const commandPaletteHTML = `
         <input type="text" id="peterpal-search-input" class="peterpal-search-input" placeholder="Search ..">
       </div>
       <div class="peterpal-results-container">
-        <div id="qf-recently-used" class="qf-recently-used">
-        </div>
-        <ul id="peterpal-results-list " class="peterpal-results-list "></ul>
+        <div id="peterpal-recently-used" class="peterpal-recently-used">
+        </div>`
+        <ul id="peterpal-results-list" class="peterpal-results-list"></ul>
       </div>
       <div class="peterpal-footer">
         Type to search, use ↑↓ to navigate, Enter to select, Alt+Shift+T to toggle theme

@@ -76,7 +76,7 @@ function focusSearchInput() {
 }
 
 function handleKeyNavigation(event) {
-  const resultsList = document.getElementById("peterpal-results-list ");
+  const resultsList = document.getElementById("peterpal-results-list");
   const items = resultsList.getElementsByTagName("li");
 
   if (event.key === "ArrowDown") {
@@ -96,9 +96,9 @@ function updateSelectedItem(items) {
   if (items.length > 0) {
     for (let i = 0; i < items.length; i++) {
       if (i === currentSelectedIndex) {
-        items[i].classList.add("qf-selected");
+        items[i].classList.add("peterpal-selected");
       } else {
-        items[i].classList.remove("qf-selected");
+        items[i].classList.remove("peterpal-selected");
       }
     }
   }
@@ -115,7 +115,7 @@ function scrollToElement(element) {
 }
 
 function selectFirstResult() {
-  const resultsList = document.getElementById("peterpal-results-list ");
+  const resultsList = document.getElementById("peterpal-results-list");
   if (resultsList) {
     const items = Array.from(resultsList.getElementsByTagName("li"));
     if (items.length > 0) {
@@ -145,7 +145,7 @@ export function displayInitialItems() {
 }
 
 function displayResults(searchResults, items) {
-  const resultsList = document.getElementById("peterpal-results-list ");
+  const resultsList = document.getElementById("peterpal-results-list");
   if (!resultsList) {
     console.error("Results list element not found");
     return;

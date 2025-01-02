@@ -50,9 +50,9 @@ function highlightElementRect(element) {
 
 export function removeHighlight() {
   if (activeHighlight) {
-    activeHighlight.element.classList.remove("peterpal-highlighted");
+    activeHighlight.element.classList.remove("qf-highlighted");
     activeHighlight.element.classList.remove(
-      `peterpal-highlighted-${activeHighlight.type}`
+      `qf-highlighted-${activeHighlight.type}`
     );
     activeHighlight = null;
 
@@ -79,7 +79,7 @@ try {
       }
     } else if (e.key === "Enter" && isCommandPaletteVisible) {
       console.log("Pressed Enter button ");
-      const selectedItem = document.querySelector(".qf-selected");
+      const selectedItem = document.querySelector(".peterpal-selected");
       if (selectedItem) {
         const elementId = selectedItem.dataset.elementId;
         const element = document.querySelector(`[data-qf-id="${elementId}"]`);
